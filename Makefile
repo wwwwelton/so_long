@@ -8,7 +8,7 @@ SOURCES_FILES	=	so_long.c
 
 SOURCES_DIR		=	sources
 
-SOURCES			=	$(addprefix $(SOURCES_DIR)/fractol/, $(SOURCES_FILES))
+SOURCES			=	$(addprefix $(SOURCES_DIR)/so_long/, $(SOURCES_FILES))
 
 OBJECTS			= 	$(SOURCES:.c=.o)
 
