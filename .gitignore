@@ -1,0 +1,5 @@
+a.out
+*.o
+mlx-test
+libmlx.a
+libmlx_Linux.a

@@ -1,0 +1,13 @@
+a.out
+.vscode
+libft-war-machine/
+*.o
+*.a
+*.so
+libftTester/
+Libftest/
+file.z
+file_2.z
+libft-unit-test
+Makefile.backup
+README2.md
