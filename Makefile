@@ -49,6 +49,6 @@ fclean:			clean
 re:				fclean all
 
 run:
-				$(MAKE) && ./fractol
+				$(MAKE) && ./so_long
 
 .PHONY:			all clean fclean re libft minilibx
