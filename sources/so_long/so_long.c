@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:08 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/10 03:52:51 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/10 04:13:45 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int main(int argc, char **argv)
 			mlx_loop(game.mlx);
 		}
 		else
-			printf("Map error!");
+			printf("Map error!\n");
 	}
 	else
-		printf("No map specified.");
+		printf("No map specified.\n");
 	return (0);
 }
