@@ -6,19 +6,25 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 19:25:46 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/08 17:11:38 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/10 00:33:19 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define INT_MIN -2147483648
-# define INT_MAX 2147483647
-
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
+
+# ifndef OPEN_MAX
+#  define OPEN_MAX 256
+# endif
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
 typedef struct s_list
 {
@@ -553,5 +559,7 @@ char	*ft_char_tostr(unsigned char c);
  * argument. NULL if the allocation fails.
  */
 char	*ft_uitoa_base(size_t n, const char *base);
+
+char	*get_next_line(int fd);
 
 #endif

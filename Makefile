@@ -4,7 +4,7 @@ LIBFT			=	$(LIBFT_PATH)/libft.a
 MINILIBX_PATH	=	$(SOURCES_DIR)/minilibx
 MINILIBX		=	$(MINILIBX_PATH)/libmlx.a
 
-SOURCES_FILES	=	so_long.c get_next_line.c
+SOURCES_FILES	=	so_long.c
 
 SOURCES_DIR		=	sources
 
@@ -49,6 +49,6 @@ fclean:			clean
 re:				fclean all
 
 run:
-				$(MAKE) && ./so_long
+				$(MAKE) && ./so_long "assets/maps/default.ber"
 
 .PHONY:			all clean fclean re libft minilibx
