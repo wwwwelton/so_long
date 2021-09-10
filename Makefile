@@ -50,6 +50,6 @@ fclean:			clean
 re:				fclean all
 
 run:
-				$(MAKE) && ./so_long "assets/maps/default.ber"
+				$(MAKE) && ./so_long "assets/maps/another.ber"
 
 .PHONY:			all clean fclean re libft minilibx
