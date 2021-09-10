@@ -5,7 +5,7 @@ MINILIBX_PATH	=	$(SOURCES_DIR)/minilibx
 MINILIBX		=	$(MINILIBX_PATH)/libmlx.a
 
 SOURCES_FILES	=	so_long.c map_gen.c get_next_line.c map_check.c map_init.c
-SOURCES_FILES	+=	game_init.c game_utils.c img_init.c
+SOURCES_FILES	+=	game_init.c game_utils.c img_init.c img_draw.c
 
 SOURCES_DIR		=	sources
 
@@ -50,9 +50,9 @@ fclean:			clean
 re:				fclean all
 
 run:
-				$(MAKE) && ./so_long "assets/maps/default.ber"
+				$(MAKE) && ./so_long "assets/maps/another.ber"
 
 runv:
-				$(MAKE) && valgrind ./so_long "assets/maps/default.ber"
+				$(MAKE) && valgrind ./so_long "assets/maps/another.ber"
 
 .PHONY:			all clean fclean re libft minilibx

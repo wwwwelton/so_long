@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/10 03:12:58 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/10 15:06:44 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ void	map_init(t_game *game);
 void	game_init(t_game *game);
 void	get_window_size(t_game *game);
 void	img_init(t_game *game);
+void	img_draw(t_game *game, void *img, int x, int y);
 
 #endif
