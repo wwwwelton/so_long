@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/10 02:19:57 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/10 02:24:33 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	**map_gen(char *path_to_file);
 char	*get_next_line(int fd);
 
 int		map_check(char **map);
-void	map_draw(char **map, void	*mlx, void	*win);
+void	map_init(char **map, void	*mlx, void	*win);
 void	game_init(t_game *game);
 
 #endif
