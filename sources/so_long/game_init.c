@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   game_init.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 21:21:08 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/10 02:19:09 by wleite           ###   ########.fr       */
+/*   Created: 2021/09/10 02:17:51 by wleite            #+#    #+#             */
+/*   Updated: 2021/09/10 02:19:34 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
 
-int main(int argc, char **argv)
+void	game_init(t_game *game)
 {
-	t_game	game;
-
-	if (argc == 2)
-	{
-		game.map = map_gen(argv[1]);
-		if (map_check(game.map))
-		{
-			game_init(&game);
-			map_draw(game.map, game.mlx, game.win);
-			mlx_loop(game.mlx);
-		}
-		else
-			printf("Map error!");
-	}
-	else
-		printf("No map specified.");
-	return (0);
+	game->mlx = mlx_init();
+	game->win = mlx_new_window(game->mlx, WIN_WIDTH, WIN_HEIGHT, "so_long");
 }
