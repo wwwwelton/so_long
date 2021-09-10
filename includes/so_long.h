@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/10 01:52:13 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/10 02:07:52 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,16 @@
 #  define BUFFER_SIZE 1
 # endif
 
-# define WIN_WIDTH 1000
-# define WIN_HEIGHT 1000
+# define WIN_WIDTH 500
+# define WIN_HEIGHT 500
 
-# define IMG_WIDTH 1000
-# define IMG_HEIGHT 1000
+# define IMG_WIDTH 32
+# define IMG_HEIGHT 32
 
 char	**map_gen(char *path_to_file);
 char	*get_next_line(int fd);
 
 int		map_check(char **map);
+void	map_draw(char **map, void	*mlx, void	*win);
 
 #endif

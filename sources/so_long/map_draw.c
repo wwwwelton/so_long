@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   map_draw.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 21:21:08 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/10 02:08:30 by wleite           ###   ########.fr       */
+/*   Created: 2021/09/10 01:55:03 by wleite            #+#    #+#             */
+/*   Updated: 2021/09/10 02:07:25 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
 
-int main(int argc, char **argv)
+void	map_draw(char **map, void	*mlx, void	*win)
 {
-	void	*mlx;
-	void	*win;
-	char	**map;
+	void	*img;
+	int		img_width;
+	int 	img_height;
+	int		i;
 
-	if (argc == 2)
+	img = mlx_xpm_file_to_image(mlx, "assets/images/env_1/C.xpm", &img_width, &img_height);
+	mlx_put_image_to_window(mlx, win, img, 0, 0);
+
+	i = 0;
+	while(i < 640)
 	{
-		map = map_gen(argv[1]);
-		if (map_check(map))
-		{
-			mlx = mlx_init();
-			win = mlx_new_window(mlx, WIN_WIDTH, WIN_HEIGHT, "so_long");
-			map_draw(map, mlx, win);
-			mlx_loop(mlx);
-		}
-		else
-			printf("Map error!");
+		if (map)
+			mlx_put_image_to_window(mlx, win, img, i, 0);
+		i += 32;
 	}
-	else
-		printf("No map specified.");
-	return (0);
 }

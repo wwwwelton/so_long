@@ -6,9 +6,11 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 01:51:30 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/10 01:52:00 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/10 02:06:47 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../../includes/so_long.h"
 
 int	map_check(char **map)
 {
