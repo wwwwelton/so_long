@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/10 02:24:33 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/10 02:51:37 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ typedef struct s_game
 	void	*mlx;
 	void	*win;
 	char	**map;
+	int		win_width;
+	int		win_height;
 }	t_game;
 
 # include <stdio.h>
@@ -35,11 +37,7 @@ typedef struct s_game
 #  define BUFFER_SIZE 1
 # endif
 
-# define WIN_WIDTH 500
-# define WIN_HEIGHT 500
-
-# define IMG_WIDTH 32
-# define IMG_HEIGHT 32
+# define SPRITE_SIZE 32
 
 char	**map_gen(char *path_to_file);
 char	*get_next_line(int fd);
@@ -47,5 +45,6 @@ char	*get_next_line(int fd);
 int		map_check(char **map);
 void	map_init(char **map, void	*mlx, void	*win);
 void	game_init(t_game *game);
+void	get_window_size(t_game *game);
 
 #endif
