@@ -6,12 +6,19 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/10 15:06:44 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/10 15:24:10 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
+
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# include "../sources/libft/libft.h"
+# include "../sources/minilibx/mlx.h"
 
 typedef struct s_game
 {
@@ -23,18 +30,11 @@ typedef struct s_game
 	void	*img_exit;
 	void	*img_player;
 	int		img_width;
-	int 	img_height;
+	int		img_height;
 	char	**map;
 	int		win_width;
 	int		win_height;
 }	t_game;
-
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include "../sources/libft/libft.h"
-# include "../sources/minilibx/mlx.h"
 
 # ifndef OPEN_MAX
 #  define OPEN_MAX 256
