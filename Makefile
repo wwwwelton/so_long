@@ -4,7 +4,7 @@ LIBFT			=	$(LIBFT_PATH)/libft.a
 MINILIBX_PATH	=	$(SOURCES_DIR)/minilibx
 MINILIBX		=	$(MINILIBX_PATH)/libmlx.a
 
-SOURCES_FILES	=	so_long.c
+SOURCES_FILES	=	so_long.c map_gen.c get_next_line.c map_check.c
 
 SOURCES_DIR		=	sources
 
@@ -19,7 +19,7 @@ NAME			=	so_long
 CC				=	gcc
 RM				=	rm -f
 
-CFLAGS			=	-Wall -Wextra -Werror
+CFLAGS			=	-Wall -Wextra -Werror -g3 -fsanitize=address
 MLXFLAGS		=	-L. -lXext -L. -lX11
 
 .c.o:
@@ -28,7 +28,7 @@ MLXFLAGS		=	-L. -lXext -L. -lX11
 all:			$(NAME)
 
 $(NAME):		$(LIBFT) $(MINILIBX) $(OBJECTS)
-				$(CC) $(CFLAGS) $(OBJECTS) $(MINILIBX) $(MLXFLAGS) -I $(INCLUDES) -o $(NAME)
+				$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) $(MINILIBX) $(MLXFLAGS) -I $(INCLUDES) -o $(NAME)
 
 $(LIBFT):
 				$(MAKE) -C $(LIBFT_PATH)
