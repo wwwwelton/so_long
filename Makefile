@@ -20,7 +20,7 @@ NAME			=	so_long
 CC				=	gcc
 RM				=	rm -f
 
-CFLAGS			=	-Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS			=	-Wall -Wextra -Werror -no-pie -g3 -fsanitize=address
 MLXFLAGS		=	-L. -lXext -L. -lX11
 
 .c.o:
