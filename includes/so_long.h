@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/10 02:51:37 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/10 03:12:58 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@ typedef struct s_game
 {
 	void	*mlx;
 	void	*win;
+	void	*img_space;
+	void	*img_wall;
+	void	*img_collect;
+	void	*img_exit;
+	void	*img_player;
+	int		img_width;
+	int 	img_height;
 	char	**map;
 	int		win_width;
 	int		win_height;
@@ -37,14 +44,21 @@ typedef struct s_game
 #  define BUFFER_SIZE 1
 # endif
 
+# define IMG_SPACE "assets/images/env_1/0.xpm"
+# define IMG_WALL "assets/images/env_1/1.xpm"
+# define IMG_COLLECT "assets/images/env_1/C.xpm"
+# define IMG_EXIT "assets/images/env_1/E.xpm"
+# define IMG_PLAYER "assets/images/env_1/P.xpm"
+
 # define SPRITE_SIZE 32
 
 char	**map_gen(char *path_to_file);
 char	*get_next_line(int fd);
 
 int		map_check(char **map);
-void	map_init(char **map, void	*mlx, void	*win);
+void	map_init(t_game *game);
 void	game_init(t_game *game);
 void	get_window_size(t_game *game);
+void	img_init(t_game *game);
 
 #endif

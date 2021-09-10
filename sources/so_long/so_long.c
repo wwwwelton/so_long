@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:08 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/10 02:24:28 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/10 03:10:43 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int main(int argc, char **argv)
 		if (map_check(game.map))
 		{
 			game_init(&game);
-			map_init(game.map, game.mlx, game.win);
+			img_init(&game);
+			map_init(&game);
 			mlx_loop(game.mlx);
 		}
 		else
