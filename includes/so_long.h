@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/10 15:43:31 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/10 22:40:58 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,16 @@ typedef struct s_game
 	void	*img_collect;
 	void	*img_exit;
 	void	*img_player;
-	int		img_width;
-	int		img_height;
+	void	*param;
 	char	**map;
-	int		win_width;
-	int		win_height;
-}	t_game;
-
-typedef struct s_param{
 	int		x;
 	int		y;
-	char	str[3];
-}	t_param;
+	int		img_width;
+	int		img_height;
+	int		win_width;
+	int		win_height;
+	int		moves;
+}	t_game;
 
 # ifndef OPEN_MAX
 #  define OPEN_MAX 256
@@ -50,18 +48,16 @@ typedef struct s_param{
 #  define BUFFER_SIZE 1
 # endif
 
-# define X_EVENT_KEY_PRESS 2
-# define X_EVENT_KEY_release 3
-# define X_EVENT_KEY_EXIT 17
+# define DEBUG 1
 
-# define KEY_ESC 53
-# define KEY_Q 12
-# define KEY_W 13
-# define KEY_E 14
-# define KEY_R 15
-# define KEY_A 0
-# define KEY_S 1
-# define KEY_D 2
+# define X_EVENT_KEY_PRESS 2
+# define X_EVENT_DESTROY_NOTIFY 17
+
+# define KEY_ESC 65307
+# define KEY_W 119
+# define KEY_A 97
+# define KEY_S 115
+# define KEY_D 100
 
 # define IMG_SPACE "assets/images/env_1/0.xpm"
 # define IMG_WALL "assets/images/env_1/1.xpm"
@@ -80,5 +76,8 @@ void	game_init(t_game *game);
 void	get_window_size(t_game *game);
 void	img_init(t_game *game);
 void	img_draw(t_game *game, void *img, int x, int y);
+int		key_press(int keycode, t_game *game);
+void	map_update(int keycode, t_game *game);
+int		exit_game(void);
 
 #endif

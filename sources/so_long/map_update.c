@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   map_update.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 21:21:08 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/10 22:12:12 by wleite           ###   ########.fr       */
+/*   Created: 2021/09/10 20:38:58 by wleite            #+#    #+#             */
+/*   Updated: 2021/09/10 23:04:06 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
 
-int	main(int argc, char **argv)
+void	map_update(int keycode, t_game *game)
 {
-	t_game	game;
+	int	x;
+	int	y;
 
-	setbuf(stdout, NULL);
-	if (argc == 2)
+	x = game->x;
+	y = game->y;
+	if (keycode == KEY_W)
 	{
-		game.map = map_gen(argv[1]);
-		if (map_check(game.map))
+		if (game->map[x - 1][y] == '0')
 		{
-			game_init(&game);
-			img_init(&game);
-			map_init(&game);
-			mlx_hook(game.win, X_EVENT_KEY_PRESS, 1L << 0, &key_press, &game);
-			mlx_hook(game.win, X_EVENT_DESTROY_NOTIFY, 0, &exit_game, &game);
-			mlx_loop(game.mlx);
+			game->map[x][y] = '0';
+			game->map[x - 1][y] = 'P';
+			game->moves++;
 		}
-		else
-			printf("Map error!\n");
 	}
-	else
-		printf("No map specified.\n");
-	return (0);
+	map_init(game);
 }

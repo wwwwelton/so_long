@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 01:55:03 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/10 15:22:37 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/10 22:53:36 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ void	map_init(t_game *game)
 			if (game->map[i][j] == 'E')
 				img_draw(game, game->img_exit, j, i);
 			if (game->map[i][j] == 'P')
+			{
 				img_draw(game, game->img_player, j, i);
+				game->x = i;
+				game->y = j;
+			}
 			j++;
 		}
 		i++;
