@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 20:38:58 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/11 01:05:18 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/11 03:15:59 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,7 @@ static void	map_updater(t_game *game)
 			else if (game->map[i][j] == 'E')
 				img_draw(game, game->img_exit, j, i);
 			else if (game->map[i][j] == 'P')
-			{
-				img_draw(game, game->img_player, j, i);
-				game->x = j;
-				game->y = i;
-			}
+				map_update_hook_p(game, j, i);
 			j++;
 		}
 		i++;
