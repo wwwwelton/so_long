@@ -6,11 +6,11 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 00:16:08 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/11 00:58:19 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/11 03:58:03 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../includes/so_long.h"
 
 void	hold_w(t_game *game)
 {

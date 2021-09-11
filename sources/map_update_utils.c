@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_check.c                                        :+:      :+:    :+:   */
+/*   map_update_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 01:51:30 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/11 03:42:43 by wleite           ###   ########.fr       */
+/*   Created: 2021/09/11 03:12:41 by wleite            #+#    #+#             */
+/*   Updated: 2021/09/11 03:58:03 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../includes/so_long.h"
 
-int	map_check(char **map)
+void	map_update_hook_p(t_game *game, int j, int i)
 {
-	if (map)
-		return (1);
-	return (0);
+	img_draw(game, game->img_player, j, i);
+	game->x = j;
+	game->y = i;
 }

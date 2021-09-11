@@ -11,7 +11,7 @@ SOURCES_FILES	+=	map_update_utils.c
 
 SOURCES_DIR		=	sources
 
-SOURCES			=	$(addprefix $(SOURCES_DIR)/so_long/, $(SOURCES_FILES))
+SOURCES			=	$(addprefix $(SOURCES_DIR)/, $(SOURCES_FILES))
 
 OBJECTS			= 	$(SOURCES:.c=.o)
 

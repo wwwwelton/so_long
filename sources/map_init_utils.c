@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game_init.c                                        :+:      :+:    :+:   */
+/*   map_init_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 02:17:51 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/11 03:31:10 by wleite           ###   ########.fr       */
+/*   Created: 2021/09/11 03:06:40 by wleite            #+#    #+#             */
+/*   Updated: 2021/09/11 03:58:03 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../includes/so_long.h"
 
-void	game_init(t_game *game)
+void	map_init_hook_c(t_game *game, int j, int i)
 {
-	get_window_size(game);
-	game->mlx = mlx_init();
-	game->win = mlx_new_window
-		(game->mlx, game->win_width, game->win_height, "so_long");
-	game->moves = 0;
-	game->collected = 0;
-	game->collectable = 0;
+	img_draw(game, game->img_collect, j, i);
+	game->collectable++;
+}
+
+void	map_init_hook_p(t_game *game, int j, int i)
+{
+	img_draw(game, game->img_player, j, i);
+	game->x = j;
+	game->y = i;
 }

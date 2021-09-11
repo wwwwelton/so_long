@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_update_utils.c                                 :+:      :+:    :+:   */
+/*   game_init.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/11 03:12:41 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/11 03:16:08 by wleite           ###   ########.fr       */
+/*   Created: 2021/09/10 02:17:51 by wleite            #+#    #+#             */
+/*   Updated: 2021/09/11 03:58:03 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../includes/so_long.h"
 
-void	map_update_hook_p(t_game *game, int j, int i)
+void	game_init(t_game *game)
 {
-	img_draw(game, game->img_player, j, i);
-	game->x = j;
-	game->y = i;
+	get_window_size(game);
+	game->mlx = mlx_init();
+	game->win = mlx_new_window
+		(game->mlx, game->win_width, game->win_height, "so_long");
+	game->moves = 0;
+	game->collected = 0;
+	game->collectable = 0;
 }
