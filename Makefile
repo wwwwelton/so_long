@@ -57,4 +57,7 @@ run:
 runv:
 				$(MAKE) && valgrind ./so_long "assets/maps/another.ber"
 
+norm:
+				norminette $(SOURCES) ./includes/so_long.h
+
 .PHONY:			all clean fclean re libft minilibx
