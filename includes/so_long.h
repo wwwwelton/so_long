@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/11 01:05:28 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/11 03:08:54 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,12 @@ void	hold_w(t_game *game);
 void	hold_a(t_game *game);
 void	hold_s(t_game *game);
 void	hold_d(t_game *game);
+
+void	map_init_hook_1(t_game *game, int j, int i);
+void	map_init_hook_0(t_game *game, int j, int i);
+void	map_init_hook_c(t_game *game, int j, int i);
+void	map_init_hook_e(t_game *game, int j, int i);
+void	map_init_hook_p(t_game *game, int j, int i);
+
 
 #endif
