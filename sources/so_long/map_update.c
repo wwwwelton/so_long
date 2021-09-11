@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 20:38:58 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/11 01:02:52 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/11 01:05:18 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ void	map_update(int keycode, t_game *game)
 		hold_a(game);
 	else if (keycode == KEY_S)
 		hold_s(game);
-	// else if (keycode == KEY_D)
-	// 	hold_d(game);
+	else if (keycode == KEY_D)
+		hold_d(game);
 	else
 		return ;
 	map_updater(game);
