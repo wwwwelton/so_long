@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/11 03:19:00 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/11 03:55:59 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-# include "../sources/libft/libft.h"
-# include "../sources/minilibx/mlx.h"
+# include "../libft/libft.h"
+# include "../minilibx/mlx.h"
 
 typedef struct s_game
 {
