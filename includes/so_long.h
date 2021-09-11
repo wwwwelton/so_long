@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/11 00:18:57 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/11 01:03:04 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,6 @@ void	change_position(char *pos, char *next_pos, char val, char new_val);
 
 void	hold_w(t_game *game);
 void	hold_a(t_game *game);
+void	hold_s(t_game *game);
 
 #endif
