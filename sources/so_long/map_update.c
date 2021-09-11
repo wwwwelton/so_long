@@ -6,11 +6,42 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 20:38:58 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/11 00:18:52 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/11 00:58:23 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
+
+static void	map_updater(t_game *game)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	while (game->map[i])
+	{
+		j = 0;
+		while (game->map[i][j])
+		{
+			if (game->map[i][j] == '1')
+				img_draw(game, game->img_wall, j, i);
+			else if (game->map[i][j] == '0')
+				img_draw(game, game->img_space, j, i);
+			else if (game->map[i][j] == 'C')
+				img_draw(game, game->img_collect, j, i);
+			else if (game->map[i][j] == 'E')
+				img_draw(game, game->img_exit, j, i);
+			else if (game->map[i][j] == 'P')
+			{
+				img_draw(game, game->img_player, j, i);
+				game->x = j;
+				game->y = i;
+			}
+			j++;
+		}
+		i++;
+	}
+}
 
 void	map_update(int keycode, t_game *game)
 {
@@ -24,5 +55,5 @@ void	map_update(int keycode, t_game *game)
 	// 	hold_d(game);
 	else
 		return ;
-	map_init(game);
+	map_updater(game);
 }
