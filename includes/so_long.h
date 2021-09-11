@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/10 22:40:58 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/10 23:42:22 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ typedef struct s_game
 	int		win_width;
 	int		win_height;
 	int		moves;
+	int		collected;
+	int		collectable;
 }	t_game;
 
 # ifndef OPEN_MAX

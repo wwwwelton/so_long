@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 01:55:03 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/10 22:53:36 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/10 23:42:59 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,17 @@ void	map_init(t_game *game)
 			if (game->map[i][j] == '0')
 				img_draw(game, game->img_space, j, i);
 			if (game->map[i][j] == 'C')
+			{
 				img_draw(game, game->img_collect, j, i);
+				game->collectable++;
+			}
 			if (game->map[i][j] == 'E')
 				img_draw(game, game->img_exit, j, i);
 			if (game->map[i][j] == 'P')
 			{
 				img_draw(game, game->img_player, j, i);
-				game->x = i;
-				game->y = j;
+				game->x = j;
+				game->y = i;
 			}
 			j++;
 		}
