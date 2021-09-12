@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/11 03:55:59 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/12 15:29:15 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,15 @@ typedef struct s_game
 	int		collected;
 	int		collectable;
 }	t_game;
+
+typedef struct s_map
+{
+	int	col;
+	int	row;
+	int	e_count;
+	int	s_count;
+	int	c_count;
+}	t_map;
 
 # ifndef OPEN_MAX
 #  define OPEN_MAX 256
