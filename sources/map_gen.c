@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 00:43:20 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/12 08:48:54 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/12 15:22:09 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ char	**map_gen(char *path_to_file)
 	char	*map;
 	int		fd;
 
-	if (!path_to_file)
-		return (NULL);
 	fd = open(path_to_file, O_RDONLY);
 	if (fd == -1)
 		return (NULL);
