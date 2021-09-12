@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 02:46:04 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/11 03:58:03 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/12 15:36:17 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	display_info(t_game *game)
 int	key_press(int keycode, t_game *game)
 {
 	if (keycode == KEY_ESC)
-		exit_game();
+		exit_game(0);
 	else
 	{
 		map_update(keycode, game);
@@ -63,8 +63,8 @@ void	change_position(char *pos, char *next_pos, char val, char new_val)
 	*next_pos = new_val;
 }
 
-int	exit_game(void)
+int	exit_game(int code)
 {
-	exit(0);
+	exit(code);
 	return (0);
 }

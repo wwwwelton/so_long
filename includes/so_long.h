@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/12 15:29:15 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/12 15:36:08 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	img_init(t_game *game);
 void	img_draw(t_game *game, void *img, int x, int y);
 int		key_press(int keycode, t_game *game);
 void	map_update(int keycode, t_game *game);
-int		exit_game(void);
+int		exit_game(int code);
 void	change_position(char *pos, char *next_pos, char val, char new_val);
 
 void	hold_w(t_game *game);
