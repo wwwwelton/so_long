@@ -64,4 +64,7 @@ runiv:
 norm:
 				norminette $(SOURCES) ./includes/so_long.h
 
+img:
+				convert *.jpg -set filename:base "%[basename]" "%[filename:base].xpm"
+
 .PHONY:			all clean fclean re libft minilibx
