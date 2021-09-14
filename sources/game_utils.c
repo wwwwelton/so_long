@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 02:46:04 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/13 23:51:17 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/13 23:56:26 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,4 @@ void	change_position(char *pos, char *next_pos, char val, char new_val)
 {
 	*pos = val;
 	*next_pos = new_val;
-}
-
-int	exit_mlx(int code)
-{
-	exit(code);
-	return (0);
 }

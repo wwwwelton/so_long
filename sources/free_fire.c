@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 22:09:57 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/13 23:51:18 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/13 23:56:44 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ int	exit_game(t_game *game)
 {
 	free_map(game->map);
 	free_game(game);
-	exit_mlx(0);
+	exit(0);
 	return (0);
 }

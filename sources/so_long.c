@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:08 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/13 23:51:17 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/13 23:56:30 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(int argc, char **argv)
 		{
 			printf("Error!\nInvalid map!\n");
 			free_map(game.map);
-			exit_mlx(0);
+			exit(0);
 		}
 	}
 	else
