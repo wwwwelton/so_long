@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/14 17:24:20 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/14 17:45:51 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ typedef struct s_map
 
 # define X_EVENT_KEY_PRESS 2
 # define X_EVENT_DESTROY_NOTIFY 17
+# define X_EVENT_FOCUS_IN 9
 
 # define KEY_ESC 65307
 # define KEY_W 119
@@ -115,5 +116,8 @@ void	free_game(t_game *game);
 int		exit_game(t_game *game);
 
 void	update_direction(int player_direction, t_game *game);
+
+int		map_resume(t_game *game);
+void	game_hook(t_game *game);
 
 #endif
