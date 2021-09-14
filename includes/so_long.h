@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/13 23:56:37 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/14 02:26:14 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,11 @@ typedef struct s_map
 # define KEY_S 115
 # define KEY_D 100
 
-# define IMG_SPACE "assets/images/env_1/0.xpm"
-# define IMG_WALL "assets/images/env_1/1.xpm"
-# define IMG_COLLECT "assets/images/env_1/C.xpm"
-# define IMG_EXIT "assets/images/env_1/E.xpm"
-# define IMG_PLAYER "assets/images/env_1/P.xpm"
+# define IMG_SPACE "assets/images/env_2/0.xpm"
+# define IMG_WALL "assets/images/env_2/1.xpm"
+# define IMG_COLLECT "assets/images/env_2/C.xpm"
+# define IMG_EXIT "assets/images/env_2/E.xpm"
+# define IMG_PLAYER "assets/images/env_2/P.xpm"
 
 # define SPRITE_SIZE 32
 
