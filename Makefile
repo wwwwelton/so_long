@@ -1,7 +1,7 @@
-LIBFT_PATH		=	./libft
+LIBFT_PATH		=	./libraries/libft
 LIBFT			=	$(LIBFT_PATH)/libft.a
 
-MINILIBX_PATH	=	./minilibx
+MINILIBX_PATH	=	./libraries/minilibx
 MINILIBX		=	$(MINILIBX_PATH)/libmlx.a
 
 SOURCES_FILES	=	so_long.c map_gen.c get_next_line.c map_check.c map_init.c
