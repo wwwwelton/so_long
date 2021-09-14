@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 01:51:30 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/14 00:05:25 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/14 17:19:45 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,27 @@ static void	t_map_init(t_map *m)
 	m->e_count = 0;
 	m->s_count = 0;
 	m->c_count = 0;
+}
+
+static int	valid_characters(char **map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			if (map[i][j] != '0' && map[i][j] != '1' && map[i][j] != 'C'
+				&& map[i][j] != 'E' && map[i][j] != 'P')
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
 }
 
 static int	valid_positions(char **map, t_map *m)
@@ -80,7 +101,8 @@ int	map_check(char **map)
 
 	t_map_init(&m);
 	if (map)
-		if (valid_positions(map, &m) && valid_walls(map, &m))
+		if (valid_positions(map, &m) && valid_walls(map, &m)
+			&& valid_characters(map))
 			return (1);
 	return (0);
 }
