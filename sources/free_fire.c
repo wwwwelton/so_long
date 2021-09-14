@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 22:09:57 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/14 00:08:04 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/14 03:18:56 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@ void	free_game(t_game *game)
 	mlx_destroy_image(game->mlx, game->img_collect);
 	mlx_destroy_image(game->mlx, game->img_exit);
 	mlx_destroy_image(game->mlx, game->img_player);
+	mlx_destroy_image(game->mlx, game->player_w);
+	mlx_destroy_image(game->mlx, game->player_a);
+	mlx_destroy_image(game->mlx, game->player_s);
+	mlx_destroy_image(game->mlx, game->player_d);
 	mlx_destroy_window(game->mlx, game->win);
 	mlx_destroy_display(game->mlx);
 	ft_free_ptr(&game->mlx);

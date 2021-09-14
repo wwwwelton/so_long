@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/14 03:05:51 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/14 03:17:25 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@ typedef struct s_game
 	void	*img_collect;
 	void	*img_exit;
 	void	*img_player;
+	void	*player_w;
+	void	*player_a;
+	void	*player_s;
+	void	*player_d;
 	char	**map;
 	int		player_direction;
 	int		x;
@@ -75,6 +79,11 @@ typedef struct s_map
 # define IMG_COLLECT "assets/images/env_2/C.xpm"
 # define IMG_EXIT "assets/images/env_2/E.xpm"
 # define IMG_PLAYER "assets/images/env_2/P.xpm"
+
+# define PLAYER_W "assets/images/env_2/P_W.xpm"
+# define PLAYER_A "assets/images/env_2/P_A.xpm"
+# define PLAYER_S "assets/images/env_2/P_S.xpm"
+# define PLAYER_D "assets/images/env_2/P_D.xpm"
 
 # define SPRITE_SIZE 32
 

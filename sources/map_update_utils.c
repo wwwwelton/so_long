@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 03:12:41 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/11 03:58:03 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/14 03:20:18 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,14 @@
 
 void	map_update_hook_p(t_game *game, int j, int i)
 {
-	img_draw(game, game->img_player, j, i);
+	if (game->player_direction == 'w')
+		img_draw(game, game->player_w, j, i);
+	else if (game->player_direction == 'a')
+		img_draw(game, game->player_a, j, i);
+	else if (game->player_direction == 's')
+		img_draw(game, game->player_s, j, i);
+	else if (game->player_direction == 'd')
+		img_draw(game, game->player_d, j, i);
 	game->x = j;
 	game->y = i;
 }
