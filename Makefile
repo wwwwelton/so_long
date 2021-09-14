@@ -58,8 +58,8 @@ run:
 runv:
 				$(MAKE) && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long assets/maps/another.ber
 
-runvv:
-				$(MAKE) && valgrind ./so_long assets/maps/another.ber
+runiv:
+				$(MAKE) && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long assets/maps/another.berr
 
 norm:
 				norminette $(SOURCES) ./includes/so_long.h
