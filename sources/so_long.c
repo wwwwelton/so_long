@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:08 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/13 23:43:50 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/13 23:51:17 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ int	main(int argc, char **argv)
 			img_init(&game);
 			map_init(&game);
 			mlx_hook(game.win, X_EVENT_KEY_PRESS, 1L << 0, &key_press, &game);
-			mlx_hook(game.win, X_EVENT_DESTROY_NOTIFY, 0, &free_fire, &game);
+			mlx_hook(game.win, X_EVENT_DESTROY_NOTIFY, 0, &exit_game, &game);
 			mlx_loop(game.mlx);
 		}
 		else
 		{
 			printf("Error!\nInvalid map!\n");
 			free_map(game.map);
-			exit_game(0);
+			exit_mlx(0);
 		}
 	}
 	else

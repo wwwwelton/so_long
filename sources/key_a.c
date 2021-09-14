@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 00:16:08 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/13 23:43:04 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/13 23:51:17 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	hold_a(t_game *game)
 	{
 		change_position(&game->map[y][x], &game->map[y][x - 1], '0', 'E');
 		game->moves++;
-		free_fire(game);
+		exit_game(game);
 	}
 	else
 		return ;
