@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/12 15:36:08 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/13 23:42:49 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ typedef struct s_game
 	void	*img_collect;
 	void	*img_exit;
 	void	*img_player;
-	void	*param;
 	char	**map;
 	int		x;
 	int		y;
@@ -101,5 +100,9 @@ void	map_init_hook_c(t_game *game, int j, int i);
 void	map_init_hook_p(t_game *game, int j, int i);
 
 void	map_update_hook_p(t_game *game, int j, int i);
+
+void	free_map(char **map);
+void	free_game(t_game *game);
+int		free_fire(t_game *game);
 
 #endif

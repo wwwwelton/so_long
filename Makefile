@@ -7,7 +7,7 @@ MINILIBX		=	$(MINILIBX_PATH)/libmlx.a
 SOURCES_FILES	=	so_long.c map_gen.c get_next_line.c map_check.c map_init.c
 SOURCES_FILES	+=	game_init.c game_utils.c img_init.c img_draw.c map_update.c
 SOURCES_FILES	+=	key_w.c key_a.c key_s.c key_d.c map_init_utils.c
-SOURCES_FILES	+=	map_update_utils.c
+SOURCES_FILES	+=	map_update_utils.c free_fire.c
 
 SOURCES_DIR		=	sources
 
@@ -22,7 +22,8 @@ NAME			=	so_long
 CC				=	gcc
 RM				=	rm -f
 
-CFLAGS			=	-Wall -Wextra -Werror -no-pie -g3 -fsanitize=address
+#CFLAGS			=	-Wall -Wextra -Werror -no-pie -g3 -fsanitize=address
+CFLAGS			=	-Wall -Wextra -Werror -no-pie -g3
 MLXFLAGS		=	-L. -lXext -L. -lX11
 
 .c.o:
@@ -55,7 +56,10 @@ run:
 				$(MAKE) && ./so_long "assets/maps/another.ber"
 
 runv:
-				$(MAKE) && valgrind ./so_long "assets/maps/another.ber"
+				$(MAKE) && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long assets/maps/another.ber
+
+runvv:
+				$(MAKE) && valgrind ./so_long assets/maps/another.ber
 
 norm:
 				norminette $(SOURCES) ./includes/so_long.h

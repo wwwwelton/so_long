@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 02:46:04 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/12 15:36:17 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/13 23:43:01 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	display_info(t_game *game)
 int	key_press(int keycode, t_game *game)
 {
 	if (keycode == KEY_ESC)
-		exit_game(0);
+		free_fire(game);
 	else
 	{
 		map_update(keycode, game);
