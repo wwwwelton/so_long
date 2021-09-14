@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 02:46:04 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/13 23:56:26 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/14 03:09:08 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ int	display_info(t_game *game)
 	}
 	printf("collectable: %d\n", game->collectable);
 	printf("collected: %d\n", game->collected);
-	printf("player: X: %d | Y: %d \n", game->x, game->y);
+	printf("player: X: %d | Y: %d | D: %c\n",
+		game->x, game->y, ft_toupper(game->player_direction));
 	printf("moves: %d\n", game->moves);
 	return (1);
 }
@@ -61,4 +62,9 @@ void	change_position(char *pos, char *next_pos, char val, char new_val)
 {
 	*pos = val;
 	*next_pos = new_val;
+}
+
+void	update_direction(int player_direction, t_game *game)
+{
+	game->player_direction = player_direction;
 }
