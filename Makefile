@@ -10,15 +10,31 @@ SOURCES_FILES	+=	key_up.c key_left.c key_down.c key_right.c map_init_utils.c
 SOURCES_FILES	+=	map_update_utils.c free_fire.c map_resume.c game_hook.c
 SOURCES_FILES	+=	map_check_utils.c
 
+SOURCES_BONUS	=	free_fire_bonus.c game_hook_bonus.c game_init_bonus.c
+SOURCES_BONUS	+=	game_utils_bonus.c get_next_line_bonus.c img_draw_bonus.c
+SOURCES_BONUS	+=	img_init_bonus.c key_down_bonus.c key_left_bonus.c
+SOURCES_BONUS	+=	key_right_bonus.c key_up_bonus.c map_check_bonus.c
+SOURCES_BONUS	+=	map_check_utils_bonus.c map_gen_bonus.c map_init_bonus.c
+SOURCES_BONUS	+=	map_init_utils_bonus.c map_resume_bonus.c
+SOURCES_BONUS	+=	map_update_bonus.c map_update_utils_bonus.c so_long_bonus.c
+
 SOURCES_DIR		=	sources
+
+BONUS_DIR		=	sources_bonus
 
 SOURCES			=	$(addprefix $(SOURCES_DIR)/, $(SOURCES_FILES))
 
+BONUS_FILES		=	$(addprefix $(BONUS_DIR)/, $(SOURCES_BONUS))
+
 OBJECTS			= 	$(SOURCES:.c=.o)
+
+OBJECTS_BONUS	= 	$(BONUS_FILES:.c=.o)
 
 INCLUDES		=	includes
 
 NAME			=	so_long
+
+NAME_BONUS		=	so_long_bonus
 
 CC				=	gcc
 RM				=	rm -f
@@ -33,9 +49,10 @@ MLXFLAGS		=	-L. -lXext -L. -lX11
 all:			$(NAME)
 
 $(NAME):		$(LIBFT) $(MINILIBX) $(OBJECTS)
-				$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) \
-				$(MINILIBX) $(MLXFLAGS) -I \
-				$(INCLUDES) -o $(NAME)
+				$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) $(MINILIBX) $(MLXFLAGS) -I $(INCLUDES) -o $(NAME)
+
+bonus:			$(LIBFT) $(MINILIBX) $(OBJECTS_BONUS)
+				$(CC) $(CFLAGS) $(OBJECTS_BONUS) $(LIBFT) $(MINILIBX) $(MLXFLAGS) -I $(INCLUDES) -o $(NAME_BONUS)
 
 $(LIBFT):
 				$(MAKE) -C $(LIBFT_PATH)
@@ -46,17 +63,20 @@ $(MINILIBX):
 clean:
 				$(MAKE) -C $(LIBFT_PATH) clean
 				$(MAKE) -C $(MINILIBX_PATH) clean
-				$(RM) $(OBJECTS)
+				$(RM) $(OBJECTS) $(OBJECTS_BONUS)
 
 fclean:			clean
 				$(MAKE) -C $(LIBFT_PATH) fclean
 				$(MAKE) -C $(MINILIBX_PATH) clean
-				$(RM) $(NAME)
+				$(RM) $(NAME) $(NAME_BONUS)
 
 re:				fclean all
 
 run:
 				$(MAKE) && ./so_long "assets/maps/another_2.ber"
+
+runb:
+				$(MAKE) bonus && ./so_long_bonus "assets/maps/another_2.ber"
 
 runv:
 				$(MAKE) && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long assets/maps/another_2.ber
@@ -65,7 +85,7 @@ runiv:
 				$(MAKE) && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long assets/maps/another.berr
 
 norm:
-				norminette $(SOURCES) ./includes/so_long.h
+				norminette $(SOURCES) ./includes/so_long.h $(BONUS_DIR)
 
 img:
 				convert *.jpg -set filename:base "%[basename]" "%[filename:base].xpm"
