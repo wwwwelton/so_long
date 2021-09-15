@@ -6,7 +6,7 @@ MINILIBX		=	$(MINILIBX_PATH)/libmlx.a
 
 SOURCES_FILES	=	so_long.c map_gen.c map_check.c map_init.c
 SOURCES_FILES	+=	game_init.c game_utils.c img_init.c img_draw.c map_update.c
-SOURCES_FILES	+=	key_w.c key_a.c key_s.c key_d.c map_init_utils.c
+SOURCES_FILES	+=	key_up.c key_left.c key_down.c key_right.c map_init_utils.c
 SOURCES_FILES	+=	map_update_utils.c free_fire.c map_resume.c game_hook.c
 SOURCES_FILES	+=	map_check_utils.c
 
