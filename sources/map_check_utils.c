@@ -1,41 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   map_check_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 21:21:08 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/14 21:14:31 by wleite           ###   ########.fr       */
+/*   Created: 2021/09/10 01:51:30 by wleite            #+#    #+#             */
+/*   Updated: 2021/09/14 21:12:53 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	main(int argc, char **argv)
+void	t_map_init(t_map *m)
 {
-	t_game	game;
-
-	setbuf(stdout, NULL);
-	if (argc == 2)
-	{
-		game.map = map_gen(argv[1]);
-		if (map_check(game.map, argv[1]))
-		{
-			game_init(&game);
-			img_init(&game);
-			map_init(&game);
-			game_hook(&game);
-			mlx_loop(game.mlx);
-		}
-		else
-		{
-			printf("Error!\nInvalid map!\n");
-			free_map(game.map);
-			exit(0);
-		}
-	}
-	else
-		printf("No map specified.\n");
-	return (0);
+	m->col = 0;
+	m->row = 0;
+	m->e_count = 0;
+	m->s_count = 0;
+	m->c_count = 0;
 }

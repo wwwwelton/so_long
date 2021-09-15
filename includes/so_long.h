@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/14 20:41:15 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/14 21:17:20 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ typedef struct s_map
 char	**map_gen(char *path_to_file);
 char	*get_next_line(int fd);
 
-int		map_check(char **map);
+int		map_check(char **map, char *file);
 void	map_init(t_game *game);
 void	game_init(t_game *game);
 void	get_window_size(t_game *game);
@@ -119,5 +119,6 @@ void	update_direction(int player_direction, t_game *game);
 
 int		map_resume(t_game *game);
 void	game_hook(t_game *game);
+void	t_map_init(t_map *m);
 
 #endif
