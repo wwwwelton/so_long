@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/15 00:31:12 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/15 00:53:50 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,17 @@ typedef struct s_map
 # define X_EVENT_FOCUS_IN 9
 
 # define KEY_ESC 65307
+# define KEY_Q 113
+
 # define KEY_W 119
 # define KEY_A 97
 # define KEY_S 115
 # define KEY_D 100
+
+# define KEY_UP 65362
+# define KEY_LEFT 65361
+# define KEY_DOWN 65364
+# define KEY_RIGHT 65363
 
 # define IMG_SPACE "assets/images/env_2/0.xpm"
 # define IMG_WALL "assets/images/env_2/1.xpm"
