@@ -6,17 +6,17 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/14 23:49:20 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/15 00:31:12 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
 # include <fcntl.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
 # include "../libraries/libft/libft.h"
 # include "../libraries/minilibx/mlx.h"
 
@@ -56,15 +56,7 @@ typedef struct s_map
 	int	c_count;
 }	t_map;
 
-# ifndef OPEN_MAX
-#  define OPEN_MAX 256
-# endif
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
-
-# define DEBUG 1
+# define DEBUG 0
 
 # define X_EVENT_KEY_PRESS 2
 # define X_EVENT_DESTROY_NOTIFY 17
@@ -89,37 +81,29 @@ typedef struct s_map
 
 # define SPRITE_SIZE 32
 
-char	**map_gen(char *path_to_file);
-char	*get_next_line(int fd);
-
+int		exit_game(t_game *game);
+int		key_press(int keycode, t_game *game);
 int		map_check(char **map, char *file);
-void	map_init(t_game *game);
+int		map_resume(t_game *game);
+void	change_position(char *pos, char *next_pos, char val, char new_val);
+void	free_game(t_game *game);
+void	free_map(char **map);
+void	game_hook(t_game *game);
 void	game_init(t_game *game);
 void	get_window_size(t_game *game);
-void	img_init(t_game *game);
-void	img_draw(t_game *game, void *img, int x, int y);
-int		key_press(int keycode, t_game *game);
-void	map_update(int keycode, t_game *game);
-void	change_position(char *pos, char *next_pos, char val, char new_val);
-
-void	hold_w(t_game *game);
 void	hold_a(t_game *game);
-void	hold_s(t_game *game);
 void	hold_d(t_game *game);
-
+void	hold_s(t_game *game);
+void	hold_w(t_game *game);
+void	img_draw(t_game *game, void *img, int x, int y);
+void	img_init(t_game *game);
+void	map_init(t_game *game);
 void	map_init_hook_c(t_game *game, int j, int i);
 void	map_init_hook_p(t_game *game, int j, int i);
-
+void	map_update(int keycode, t_game *game);
 void	map_update_hook_p(t_game *game, int j, int i);
-
-void	free_map(char **map);
-void	free_game(t_game *game);
-int		exit_game(t_game *game);
-
-void	update_direction(int player_direction, t_game *game);
-
-int		map_resume(t_game *game);
-void	game_hook(t_game *game);
 void	t_map_init(t_map *m);
+void	update_direction(int player_direction, t_game *game);
+char	**map_gen(char *path_to_file);
 
 #endif

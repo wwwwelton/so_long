@@ -4,7 +4,7 @@ LIBFT			=	$(LIBFT_PATH)/libft.a
 MINILIBX_PATH	=	./libraries/minilibx
 MINILIBX		=	$(MINILIBX_PATH)/libmlx.a
 
-SOURCES_FILES	=	so_long.c map_gen.c get_next_line.c map_check.c map_init.c
+SOURCES_FILES	=	so_long.c map_gen.c map_check.c map_init.c
 SOURCES_FILES	+=	game_init.c game_utils.c img_init.c img_draw.c map_update.c
 SOURCES_FILES	+=	key_w.c key_a.c key_s.c key_d.c map_init_utils.c
 SOURCES_FILES	+=	map_update_utils.c free_fire.c map_resume.c game_hook.c

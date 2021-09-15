@@ -6,19 +6,25 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 19:25:46 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/08 17:11:38 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/15 00:16:41 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define INT_MIN -2147483648
-# define INT_MAX 2147483647
-
+# include <limits.h>
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# ifndef OPEN_MAX
+#  define OPEN_MAX 256
+# endif
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 128
+# endif
 
 typedef struct s_list
 {
@@ -553,5 +559,15 @@ char	*ft_char_tostr(unsigned char c);
  * argument. NULL if the allocation fails.
  */
 char	*ft_uitoa_base(size_t n, const char *base);
+
+/**
+ * @brief Reads a line from a file descriptor
+ *
+ * @param fd File descriptor to read.
+ * @return Return a string including \\n if is a line. In case of the file
+ * dont have \\n return a string without \\n, NULL if the file is empty
+ * or error occurred.
+ */
+char	*get_next_line(int fd);
 
 #endif
