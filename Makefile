@@ -48,10 +48,12 @@ MLXFLAGS		=	-L. -lXext -L. -lX11
 
 all:			$(NAME)
 
+bonus:			$(NAME_BONUS)
+
 $(NAME):		$(LIBFT) $(MINILIBX) $(OBJECTS)
 				$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) $(MINILIBX) $(MLXFLAGS) -I $(INCLUDES) -o $(NAME)
 
-bonus:			$(LIBFT) $(MINILIBX) $(OBJECTS_BONUS)
+$(NAME_BONUS):	$(LIBFT) $(MINILIBX) $(OBJECTS_BONUS)
 				$(CC) $(CFLAGS) $(OBJECTS_BONUS) $(LIBFT) $(MINILIBX) $(MLXFLAGS) -I $(INCLUDES) -o $(NAME_BONUS)
 
 $(LIBFT):
@@ -90,4 +92,4 @@ norm:
 img:
 				convert *.jpg -set filename:base "%[basename]" "%[filename:base].xpm"
 
-.PHONY:			all clean fclean re libft minilibx
+.PHONY:			all clean fclean re libft minilibx bonus
