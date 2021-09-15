@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 02:46:04 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/14 22:30:25 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/15 00:07:11 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	display_info(t_game *game)
 		printf("collectable: %d\n", game->collectable);
 		printf("collected: %d\n", game->collected);
 		printf("player: X: %d | Y: %d | D: %c\n",
-		game->x, game->y, ft_toupper(game->player_direction));
+			game->x, game->y, ft_toupper(game->player_direction));
 	}
 	printf("moves: %d\n", game->moves);
 	return (1);
@@ -52,6 +52,8 @@ int	key_press(int keycode, t_game *game)
 {
 	if (keycode == KEY_ESC)
 		exit_game(game);
+	else if (game->end_game)
+		return (0);
 	else
 	{
 		map_update(keycode, game);

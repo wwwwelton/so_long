@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/14 22:35:47 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/14 23:49:20 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct s_game
 	int		moves;
 	int		collected;
 	int		collectable;
+	int		end_game;
 }	t_game;
 
 typedef struct s_map

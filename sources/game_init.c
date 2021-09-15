@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 02:17:51 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/14 03:04:58 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/14 23:49:37 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ void	game_init(t_game *game)
 	game->collected = 0;
 	game->collectable = 0;
 	game->player_direction = 'D';
+	game->end_game = 0;
 }
