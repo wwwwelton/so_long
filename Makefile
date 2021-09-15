@@ -33,7 +33,9 @@ MLXFLAGS		=	-L. -lXext -L. -lX11
 all:			$(NAME)
 
 $(NAME):		$(LIBFT) $(MINILIBX) $(OBJECTS)
-				$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) $(MINILIBX) $(MLXFLAGS) -I $(INCLUDES) -o $(NAME)
+				$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) \
+				$(MINILIBX) $(MLXFLAGS) -I \
+				$(INCLUDES) -o $(NAME)
 
 $(LIBFT):
 				$(MAKE) -C $(LIBFT_PATH)
@@ -54,10 +56,10 @@ fclean:			clean
 re:				fclean all
 
 run:
-				$(MAKE) && ./so_long "assets/maps/another.ber"
+				$(MAKE) && ./so_long "assets/maps/another_2.ber"
 
 runv:
-				$(MAKE) && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long assets/maps/another.ber
+				$(MAKE) && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long assets/maps/another_2.ber
 
 runiv:
 				$(MAKE) && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long assets/maps/another.berr
