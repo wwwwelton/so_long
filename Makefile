@@ -30,7 +30,7 @@ OBJECTS			= 	$(SOURCES:.c=.o)
 
 OBJECTS_BONUS	= 	$(BONUS_FILES:.c=.o)
 
-INCLUDES		=	includes
+INCLUDES		=	./includes
 
 NAME			=	so_long
 
