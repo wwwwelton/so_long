@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/15 03:29:07 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/15 21:28:18 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,15 @@ typedef struct s_game
 	void	*img_collect;
 	void	*img_exit;
 	void	*img_player;
+	void	*img_enemy;
 	void	*player_w;
 	void	*player_a;
 	void	*player_s;
 	void	*player_d;
+	void	*enemy_w;
+	void	*enemy_a;
+	void	*enemy_s;
+	void	*enemy_d;
 	char	**map;
 	int		player_direction;
 	int		x;
@@ -56,7 +61,7 @@ typedef struct s_map
 	int	c_count;
 }	t_map;
 
-# define DEBUG 0
+# define DEBUG 1
 
 # define X_EVENT_KEY_PRESS 2
 # define X_EVENT_DESTROY_NOTIFY 17
@@ -80,19 +85,27 @@ typedef struct s_map
 # define IMG_COLLECT "assets/images/env_2/C.xpm"
 # define IMG_EXIT "assets/images/env_2/E.xpm"
 # define IMG_PLAYER "assets/images/env_2/P.xpm"
+# define IMG_ENEMY "assets/images/env_2/EN.xpm"
 
 # define PLAYER_W "assets/images/env_2/P_W.xpm"
 # define PLAYER_A "assets/images/env_2/P_A.xpm"
 # define PLAYER_S "assets/images/env_2/P_S.xpm"
 # define PLAYER_D "assets/images/env_2/P_D.xpm"
 
+# define ENEMY_W "assets/images/env_2/E_W.xpm"
+# define ENEMY_A "assets/images/env_2/E_A.xpm"
+# define ENEMY_S "assets/images/env_2/E_S.xpm"
+# define ENEMY_D "assets/images/env_2/E_D.xpm"
+
 # define SPRITE_SIZE 32
 
 int		exit_game(t_game *game);
+int		is_enemy(char enemy);
 int		key_press(int keycode, t_game *game);
 int		map_check(char **map, char *file);
 int		map_resume(t_game *game);
 void	change_position(char *pos, char *next_pos, char val, char new_val);
+void	enemy_init(t_game *game);
 void	free_game(t_game *game);
 void	free_map(char **map);
 void	game_hook(t_game *game);
@@ -106,6 +119,7 @@ void	img_draw(t_game *game, void *img, int x, int y);
 void	img_init(t_game *game);
 void	map_init(t_game *game);
 void	map_init_hook_c(t_game *game, int j, int i);
+void	map_init_hook_e(t_game *game, int j, int i);
 void	map_init_hook_p(t_game *game, int j, int i);
 void	map_update(int keycode, t_game *game);
 void	map_update_hook_p(t_game *game, int j, int i);
