@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 20:38:58 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/15 03:27:53 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/15 23:10:28 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ static void	map_updater(t_game *game)
 				img_draw(game, game->img_exit, j, i);
 			else if (game->map[i][j] == 'P')
 				map_update_hook_p(game, j, i);
+			else if (is_enemy(game->map[i][j]))
+				map_update_hook_e(game, j, i);
 			j++;
 		}
 		i++;

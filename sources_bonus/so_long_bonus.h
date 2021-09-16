@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/15 21:28:18 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/15 23:10:18 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,7 @@ void	map_init_hook_c(t_game *game, int j, int i);
 void	map_init_hook_e(t_game *game, int j, int i);
 void	map_init_hook_p(t_game *game, int j, int i);
 void	map_update(int keycode, t_game *game);
+void	map_update_hook_e(t_game *game, int j, int i);
 void	map_update_hook_p(t_game *game, int j, int i);
 void	t_map_init(t_map *m);
 void	update_direction(int player_direction, t_game *game);

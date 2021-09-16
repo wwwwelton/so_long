@@ -6,11 +6,25 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 03:12:41 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/15 03:27:57 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/15 23:10:45 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
+
+void	map_update_hook_e(t_game *game, int j, int i)
+{
+	if (game->map[i][j] == 'i')
+		img_draw(game, game->enemy_w, j, i);
+	else if (game->map[i][j] == 'j')
+		img_draw(game, game->enemy_a, j, i);
+	else if (game->map[i][j] == 'k')
+		img_draw(game, game->enemy_s, j, i);
+	else if (game->map[i][j] == 'l')
+		img_draw(game, game->enemy_d, j, i);
+	else
+		return ;
+}
 
 void	map_update_hook_p(t_game *game, int j, int i)
 {
