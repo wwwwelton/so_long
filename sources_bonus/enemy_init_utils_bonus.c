@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 01:55:03 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/15 21:35:02 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/15 21:49:57 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	is_enemy(char enemy)
 {
-	if (enemy == 'I')
+	if (enemy == 'i')
 		return (1);
-	if (enemy == 'J')
+	if (enemy == 'j')
 		return (1);
-	if (enemy == 'K')
+	if (enemy == 'k')
 		return (1);
-	if (enemy == 'L')
+	if (enemy == 'l')
 		return (1);
 	else
 		return (0);

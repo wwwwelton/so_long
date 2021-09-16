@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 03:06:40 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/15 21:33:17 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/15 21:50:19 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ void	map_init_hook_p(t_game *game, int j, int i)
 
 void	map_init_hook_e(t_game *game, int j, int i)
 {
-	if (game->map[i][j] == 'I')
+	if (game->map[i][j] == 'i')
 		img_draw(game, game->enemy_w, j, i);
-	else if (game->map[i][j] == 'J')
+	else if (game->map[i][j] == 'j')
 		img_draw(game, game->enemy_a, j, i);
-	else if (game->map[i][j] == 'K')
+	else if (game->map[i][j] == 'k')
 		img_draw(game, game->enemy_s, j, i);
-	else if (game->map[i][j] == 'L')
+	else if (game->map[i][j] == 'l')
 		img_draw(game, game->enemy_d, j, i);
 	else
 		return ;

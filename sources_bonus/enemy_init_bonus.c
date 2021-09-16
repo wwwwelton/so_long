@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 01:55:03 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/15 21:39:12 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/15 21:51:21 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 static void	place_enemy(char **map, int i, int j)
 {
 	if (map[i - 1][j] == '0')
-		map[i - 1][j] = 'K';
+		map[i - 1][j] = 'k';
 	else if (map[i + 1][j] == '0')
-		map[i + 1][j] = 'K';
+		map[i + 1][j] = 'k';
 	else if (map[i][j - 1] == '0')
-		map[i][j - 1] = 'K';
+		map[i][j - 1] = 'k';
 	else if (map[i][j + 1] == '0')
-		map[i][j + 1] = 'K';
+		map[i][j + 1] = 'k';
 	else
 		return ;
 }
