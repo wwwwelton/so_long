@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 03:12:41 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/16 00:35:46 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/16 16:39:14 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ void	map_update_hook_e(t_game *game, int j, int i)
 		img_draw(game, game->enemy_s, j, i);
 	else if (game->map[i][j] == 'l')
 		img_draw(game, game->enemy_d, j, i);
-	else
-		return ;
 }
 
 void	map_update_hook_p(t_game *game, int j, int i)

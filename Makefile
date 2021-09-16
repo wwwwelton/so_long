@@ -16,7 +16,7 @@ SOURCES_BONUS	+=	map_gen_bonus.c map_init_bonus.c map_init_utils_bonus.c
 SOURCES_BONUS	+=	map_resume_bonus.c map_update_bonus.c
 SOURCES_BONUS	+=	map_update_utils_bonus.c so_long_bonus.c enemy_init_bonus.c
 SOURCES_BONUS	+=	enemy_init_utils_bonus.c player_update_bonus.c
-SOURCES_BONUS	+=	hold_key_bonus.c
+SOURCES_BONUS	+=	hold_key_bonus.c enemy_update.c enemy_update_utils.c
 
 SOURCES_DIR		=	sources
 
@@ -78,7 +78,7 @@ run:
 				$(MAKE) && ./so_long "assets/maps/another_2.ber"
 
 runb:
-				$(MAKE) bonus && ./so_long_bonus "assets/maps/another_2.ber"
+				$(MAKE) bonus && ./so_long_bonus "assets/maps/another_3.ber"
 
 runbv:
 				$(MAKE) bonus && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long_bonus "assets/maps/another_2.ber"
@@ -90,7 +90,10 @@ runiv:
 				$(MAKE) && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long assets/maps/another.berr
 
 norm:
-				norminette $(SOURCES) ./includes/so_long.h $(BONUS_DIR)
+				norminette $(SOURCES) ./includes/so_long.h
+
+normb:
+				norminette ./includes/so_long.h $(BONUS_DIR)
 
 img:
 				convert *.jpg -set filename:base "%[basename]" "%[filename:base].xpm"

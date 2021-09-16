@@ -6,13 +6,13 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 20:38:58 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/15 23:23:38 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/16 19:43:06 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-static void	map_updater(t_game *game)
+void	map_updater(t_game *game)
 {
 	int		i;
 	int		j;
