@@ -10,7 +10,7 @@ SOURCES_FILES	+=	hold_key.c map_init_utils.c map_update_utils.c free_fire.c
 SOURCES_FILES	+=	map_resume.c game_hook.c map_check_utils.c player_update.c
 
 SOURCES_BONUS	=	free_fire_bonus.c game_hook_bonus.c game_init_bonus.c
-SOURCES_BONUS	+=	game_utils_bonus.c get_next_line_bonus.c img_draw_bonus.c
+SOURCES_BONUS	+=	game_utils_bonus.c img_draw_bonus.c
 SOURCES_BONUS	+=	img_init_bonus.c map_check_bonus.c map_check_utils_bonus.c
 SOURCES_BONUS	+=	map_gen_bonus.c map_init_bonus.c map_init_utils_bonus.c
 SOURCES_BONUS	+=	map_resume_bonus.c map_update_bonus.c
