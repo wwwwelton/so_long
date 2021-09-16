@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/15 01:09:19 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/16 00:01:48 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,10 +98,7 @@ void	free_map(char **map);
 void	game_hook(t_game *game);
 void	game_init(t_game *game);
 void	get_window_size(t_game *game);
-void	hold_down(t_game *game);
-void	hold_left(t_game *game);
-void	hold_right(t_game *game);
-void	hold_up(t_game *game);
+void	hold_key(t_game *game, int ny, int nx);
 void	img_draw(t_game *game, void *img, int x, int y);
 void	img_init(t_game *game);
 void	map_init(t_game *game);
@@ -111,6 +108,7 @@ void	map_update(int keycode, t_game *game);
 void	map_update_hook_p(t_game *game, int j, int i);
 void	t_map_init(t_map *m);
 void	update_direction(int player_direction, t_game *game);
+void	update_player(int keycode, t_game *game);
 char	**map_gen(char *path_to_file);
 
 #endif

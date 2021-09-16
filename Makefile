@@ -6,18 +6,17 @@ MINILIBX		=	$(MINILIBX_PATH)/libmlx.a
 
 SOURCES_FILES	=	so_long.c map_gen.c map_check.c map_init.c
 SOURCES_FILES	+=	game_init.c game_utils.c img_init.c img_draw.c map_update.c
-SOURCES_FILES	+=	key_up.c key_left.c key_down.c key_right.c map_init_utils.c
-SOURCES_FILES	+=	map_update_utils.c free_fire.c map_resume.c game_hook.c
-SOURCES_FILES	+=	map_check_utils.c
+SOURCES_FILES	+=	hold_key.c map_init_utils.c map_update_utils.c free_fire.c
+SOURCES_FILES	+=	map_resume.c game_hook.c map_check_utils.c player_update.c
 
 SOURCES_BONUS	=	free_fire_bonus.c game_hook_bonus.c game_init_bonus.c
 SOURCES_BONUS	+=	game_utils_bonus.c get_next_line_bonus.c img_draw_bonus.c
-SOURCES_BONUS	+=	img_init_bonus.c key_down_bonus.c key_left_bonus.c
-SOURCES_BONUS	+=	key_right_bonus.c key_up_bonus.c map_check_bonus.c
-SOURCES_BONUS	+=	map_check_utils_bonus.c map_gen_bonus.c map_init_bonus.c
-SOURCES_BONUS	+=	map_init_utils_bonus.c map_resume_bonus.c
-SOURCES_BONUS	+=	map_update_bonus.c map_update_utils_bonus.c so_long_bonus.c
-SOURCES_BONUS	+=	enemy_init_bonus.c enemy_init_utils_bonus.c
+SOURCES_BONUS	+=	img_init_bonus.c map_check_bonus.c map_check_utils_bonus.c
+SOURCES_BONUS	+=	map_gen_bonus.c map_init_bonus.c map_init_utils_bonus.c
+SOURCES_BONUS	+=	map_resume_bonus.c map_update_bonus.c
+SOURCES_BONUS	+=	map_update_utils_bonus.c so_long_bonus.c enemy_init_bonus.c
+SOURCES_BONUS	+=	enemy_init_utils_bonus.c player_update_bonus.c
+SOURCES_BONUS	+=	hold_key_bonus.c
 
 SOURCES_DIR		=	sources
 
