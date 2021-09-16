@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/15 23:39:57 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/16 00:34:28 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_game
 	void	*player_a;
 	void	*player_s;
 	void	*player_d;
+	void	*player_dead;
 	void	*enemy_w;
 	void	*enemy_a;
 	void	*enemy_s;
@@ -91,6 +92,8 @@ typedef struct s_map
 # define PLAYER_A "assets/images/env_2/P_A.xpm"
 # define PLAYER_S "assets/images/env_2/P_S.xpm"
 # define PLAYER_D "assets/images/env_2/P_D.xpm"
+
+# define PLAYER_DEAD "assets/images/env_2/P_DEAD.xpm"
 
 # define ENEMY_W "assets/images/env_2/E_W.xpm"
 # define ENEMY_A "assets/images/env_2/E_A.xpm"

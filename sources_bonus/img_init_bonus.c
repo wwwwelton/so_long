@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 03:01:02 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/15 21:06:18 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/16 00:34:10 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	img_init(t_game *game)
 	game->player_a = img_initalize(PLAYER_A, game);
 	game->player_s = img_initalize(PLAYER_S, game);
 	game->player_d = img_initalize(PLAYER_D, game);
+	game->player_dead = img_initalize(PLAYER_DEAD, game);
 	game->enemy_w = img_initalize(ENEMY_W, game);
 	game->enemy_a = img_initalize(ENEMY_A, game);
 	game->enemy_s = img_initalize(ENEMY_S, game);

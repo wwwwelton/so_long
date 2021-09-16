@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 23:38:05 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/15 23:47:31 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/16 00:37:56 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,12 @@ static void	handle_e(t_game *game, int ny, int nx)
 	game->end_game = 1;
 }
 
+static void	handle_en(t_game *game)
+{
+	game->player_direction = 'm';
+	game->end_game = 1;
+}
+
 void	hold_key(t_game *game, int ny, int nx)
 {
 	if (game->map[ny][nx] == '0')
@@ -56,6 +62,8 @@ void	hold_key(t_game *game, int ny, int nx)
 	else if (game->map[ny][nx] == 'E'
 		&& (game->collected == game->collectable))
 		handle_e(game, ny, nx);
+	else if (is_enemy(game->map[ny][nx]))
+		handle_en(game);
 	else
 		return ;
 }
