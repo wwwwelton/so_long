@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 05:19:20 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 17:12:26 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ typedef struct s_game
 	int		loops;
 	int		animations;
 	int		frame;
+	void	*mov_0;
 	void	*mov_1;
 	void	*mov_2;
 	void	*mov_3;
@@ -122,6 +123,7 @@ typedef struct s_map
 # define ENEMY_S "assets/images/env_2/E_S.xpm"
 # define ENEMY_D "assets/images/env_2/E_D.xpm"
 
+# define MOV_0 "assets/images/env_2/score/M_0.xpm"
 # define MOV_1 "assets/images/env_2/score/M_1.xpm"
 # define MOV_2 "assets/images/env_2/score/M_2.xpm"
 # define MOV_3 "assets/images/env_2/score/M_3.xpm"
