@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 22:09:57 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/16 00:34:50 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/16 21:02:12 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,27 @@ void	free_map(char **map)
 	ft_free_ptr((void *)&map);
 }
 
+static void	mlx_destroy_mov(t_game *game)
+{
+	mlx_destroy_image(game->mlx, game->mov_1);
+	mlx_destroy_image(game->mlx, game->mov_2);
+	mlx_destroy_image(game->mlx, game->mov_3);
+	mlx_destroy_image(game->mlx, game->mov_h);
+	mlx_destroy_image(game->mlx, game->mos_0);
+	mlx_destroy_image(game->mlx, game->mos_1);
+	mlx_destroy_image(game->mlx, game->mos_2);
+	mlx_destroy_image(game->mlx, game->mos_3);
+	mlx_destroy_image(game->mlx, game->mos_4);
+	mlx_destroy_image(game->mlx, game->mos_5);
+	mlx_destroy_image(game->mlx, game->mos_6);
+	mlx_destroy_image(game->mlx, game->mos_7);
+	mlx_destroy_image(game->mlx, game->mos_8);
+	mlx_destroy_image(game->mlx, game->mos_9);
+}
+
 void	free_game(t_game *game)
 {
+	mlx_destroy_mov(game);
 	mlx_destroy_image(game->mlx, game->img_space);
 	mlx_destroy_image(game->mlx, game->img_wall);
 	mlx_destroy_image(game->mlx, game->img_collect);

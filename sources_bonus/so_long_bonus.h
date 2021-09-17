@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/16 19:43:35 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/16 20:51:26 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,20 @@ typedef struct s_game
 	int		collectable;
 	int		end_game;
 	int		loops;
+	void	*mov_1;
+	void	*mov_2;
+	void	*mov_3;
+	void	*mov_h;
+	void	*mos_0;
+	void	*mos_1;
+	void	*mos_2;
+	void	*mos_3;
+	void	*mos_4;
+	void	*mos_5;
+	void	*mos_6;
+	void	*mos_7;
+	void	*mos_8;
+	void	*mos_9;
 }	t_game;
 
 typedef struct s_map
@@ -102,6 +116,24 @@ typedef struct s_map
 # define ENEMY_A "assets/images/env_2/E_A.xpm"
 # define ENEMY_S "assets/images/env_2/E_S.xpm"
 # define ENEMY_D "assets/images/env_2/E_D.xpm"
+
+# define MOV_1 "assets/images/env_2/moves/M_1.xpm"
+# define MOV_2 "assets/images/env_2/moves/M_2.xpm"
+# define MOV_3 "assets/images/env_2/moves/M_3.xpm"
+
+# define MOV_H "assets/images/env_2/moves/M_H.xpm"
+
+# define MS_0 "assets/images/env_2/moves/MS_0.xpm"
+# define MS_1 "assets/images/env_2/moves/MS_1.xpm"
+# define MS_2 "assets/images/env_2/moves/MS_2.xpm"
+# define MS_3 "assets/images/env_2/moves/MS_3.xpm"
+# define MS_4 "assets/images/env_2/moves/MS_4.xpm"
+# define MS_5 "assets/images/env_2/moves/MS_5.xpm"
+# define MS_6 "assets/images/env_2/moves/MS_6.xpm"
+# define MS_7 "assets/images/env_2/moves/MS_7.xpm"
+# define MS_8 "assets/images/env_2/moves/MS_8.xpm"
+# define MS_9 "assets/images/env_2/moves/MS_9.xpm"
+
 
 # define SPRITE_SIZE 32
 

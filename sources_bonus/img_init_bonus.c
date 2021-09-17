@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 03:01:02 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/16 00:34:10 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/16 20:58:17 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,27 @@ static void	*img_initalize(char *img, t_game *game)
 	return (img_ptr);
 }
 
+static void	img_mov_init(t_game *game)
+{
+	game->mov_1 = img_initalize(MOV_1, game);
+	game->mov_2 = img_initalize(MOV_2, game);
+	game->mov_3 = img_initalize(MOV_3, game);
+	game->mov_h = img_initalize(MOV_H, game);
+	game->mos_0 = img_initalize(MS_0, game);
+	game->mos_1 = img_initalize(MS_1, game);
+	game->mos_2 = img_initalize(MS_2, game);
+	game->mos_3 = img_initalize(MS_3, game);
+	game->mos_4 = img_initalize(MS_4, game);
+	game->mos_5 = img_initalize(MS_5, game);
+	game->mos_6 = img_initalize(MS_6, game);
+	game->mos_7 = img_initalize(MS_7, game);
+	game->mos_8 = img_initalize(MS_8, game);
+	game->mos_9 = img_initalize(MS_9, game);
+}
+
 void	img_init(t_game *game)
 {
+	img_mov_init(game);
 	game->img_space = img_initalize(IMG_SPACE, game);
 	game->img_wall = img_initalize(IMG_WALL, game);
 	game->img_collect = img_initalize(IMG_COLLECT, game);
