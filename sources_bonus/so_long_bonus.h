@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 17:12:26 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 17:18:05 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,55 +104,55 @@ typedef struct s_map
 # define KEY_DOWN 65364
 # define KEY_RIGHT 65363
 
-# define IMG_SPACE "assets/images/env_2/0.xpm"
-# define IMG_WALL "assets/images/env_2/1.xpm"
-# define IMG_COLLECT "assets/images/env_2/C.xpm"
-# define IMG_EXIT "assets/images/env_2/E.xpm"
-# define IMG_PLAYER "assets/images/env_2/P.xpm"
-# define IMG_ENEMY "assets/images/env_2/EN.xpm"
+# define IMG_SPACE "assets/images/env_3/0.xpm"
+# define IMG_WALL "assets/images/env_3/1.xpm"
+# define IMG_COLLECT "assets/images/env_3/C.xpm"
+# define IMG_EXIT "assets/images/env_3/E.xpm"
+# define IMG_PLAYER "assets/images/env_3/P.xpm"
+# define IMG_ENEMY "assets/images/env_3/EN.xpm"
 
-# define PLAYER_W "assets/images/env_2/P_W.xpm"
-# define PLAYER_A "assets/images/env_2/P_A.xpm"
-# define PLAYER_S "assets/images/env_2/P_S.xpm"
-# define PLAYER_D "assets/images/env_2/P_D.xpm"
+# define PLAYER_W "assets/images/env_3/P_W.xpm"
+# define PLAYER_A "assets/images/env_3/P_A.xpm"
+# define PLAYER_S "assets/images/env_3/P_S.xpm"
+# define PLAYER_D "assets/images/env_3/P_D.xpm"
 
-# define PLAYER_DEAD "assets/images/env_2/P_DEAD.xpm"
+# define PLAYER_DEAD "assets/images/env_3/P_DEAD.xpm"
 
-# define ENEMY_W "assets/images/env_2/E_W.xpm"
-# define ENEMY_A "assets/images/env_2/E_A.xpm"
-# define ENEMY_S "assets/images/env_2/E_S.xpm"
-# define ENEMY_D "assets/images/env_2/E_D.xpm"
+# define ENEMY_W "assets/images/env_3/E_W.xpm"
+# define ENEMY_A "assets/images/env_3/E_A.xpm"
+# define ENEMY_S "assets/images/env_3/E_S.xpm"
+# define ENEMY_D "assets/images/env_3/E_D.xpm"
 
-# define MOV_0 "assets/images/env_2/score/M_0.xpm"
-# define MOV_1 "assets/images/env_2/score/M_1.xpm"
-# define MOV_2 "assets/images/env_2/score/M_2.xpm"
-# define MOV_3 "assets/images/env_2/score/M_3.xpm"
+# define MOV_0 "assets/images/env_3/score/M_0.xpm"
+# define MOV_1 "assets/images/env_3/score/M_1.xpm"
+# define MOV_2 "assets/images/env_3/score/M_2.xpm"
+# define MOV_3 "assets/images/env_3/score/M_3.xpm"
 
-# define MOV_H "assets/images/env_2/score/M_H.xpm"
-# define MOV_H2 "assets/images/env_2/score/M_H2.xpm"
+# define MOV_H "assets/images/env_3/score/M_H.xpm"
+# define MOV_H2 "assets/images/env_3/score/M_H2.xpm"
 
-# define MS_0 "assets/images/env_2/score/MS_0.xpm"
-# define MS_1 "assets/images/env_2/score/MS_1.xpm"
-# define MS_2 "assets/images/env_2/score/MS_2.xpm"
-# define MS_3 "assets/images/env_2/score/MS_3.xpm"
-# define MS_4 "assets/images/env_2/score/MS_4.xpm"
-# define MS_5 "assets/images/env_2/score/MS_5.xpm"
-# define MS_6 "assets/images/env_2/score/MS_6.xpm"
-# define MS_7 "assets/images/env_2/score/MS_7.xpm"
-# define MS_8 "assets/images/env_2/score/MS_8.xpm"
-# define MS_9 "assets/images/env_2/score/MS_9.xpm"
+# define MS_0 "assets/images/env_3/score/MS_0.xpm"
+# define MS_1 "assets/images/env_3/score/MS_1.xpm"
+# define MS_2 "assets/images/env_3/score/MS_2.xpm"
+# define MS_3 "assets/images/env_3/score/MS_3.xpm"
+# define MS_4 "assets/images/env_3/score/MS_4.xpm"
+# define MS_5 "assets/images/env_3/score/MS_5.xpm"
+# define MS_6 "assets/images/env_3/score/MS_6.xpm"
+# define MS_7 "assets/images/env_3/score/MS_7.xpm"
+# define MS_8 "assets/images/env_3/score/MS_8.xpm"
+# define MS_9 "assets/images/env_3/score/MS_9.xpm"
 
-# define C_1 "assets/images/env_2/animation/C_1.xpm"
-# define C_2 "assets/images/env_2/animation/C_2.xpm"
-# define C_3 "assets/images/env_2/animation/C_3.xpm"
-# define C_4 "assets/images/env_2/animation/C_4.xpm"
-# define C_5 "assets/images/env_2/animation/C_5.xpm"
+# define C_1 "assets/images/env_3/animation/C_1.xpm"
+# define C_2 "assets/images/env_3/animation/C_2.xpm"
+# define C_3 "assets/images/env_3/animation/C_3.xpm"
+# define C_4 "assets/images/env_3/animation/C_4.xpm"
+# define C_5 "assets/images/env_3/animation/C_5.xpm"
 
-# define E_1 "assets/images/env_2/animation/E_1.xpm"
-# define E_2 "assets/images/env_2/animation/E_2.xpm"
-# define E_3 "assets/images/env_2/animation/E_3.xpm"
-# define E_4 "assets/images/env_2/animation/E_4.xpm"
-# define E_5 "assets/images/env_2/animation/E_5.xpm"
+# define E_1 "assets/images/env_3/animation/E_1.xpm"
+# define E_2 "assets/images/env_3/animation/E_2.xpm"
+# define E_3 "assets/images/env_3/animation/E_3.xpm"
+# define E_4 "assets/images/env_3/animation/E_4.xpm"
+# define E_5 "assets/images/env_3/animation/E_5.xpm"
 
 # define SPRITE_SIZE 32
 
