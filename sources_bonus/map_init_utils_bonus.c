@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 03:06:40 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 01:29:22 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 05:02:07 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ void	map_init_hook_s(t_game *game, int j, int i)
 		img_draw(game, game->mov_3, j, i);
 	else if (game->map[i][j] == -123)
 		img_draw(game, game->mov_h, j, i);
+	else if (game->map[i][j] == -124)
+		img_draw(game, game->mov_h2, j, i);
 	else
 		return ;
 }

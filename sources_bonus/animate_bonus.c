@@ -6,13 +6,13 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 03:00:52 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 04:53:46 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 05:10:48 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-static void frame_update(t_game *game)
+static void	frame_update(t_game *game)
 {
 	if (game->frame < 5)
 		game->frame++;

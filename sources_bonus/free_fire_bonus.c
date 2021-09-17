@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 22:09:57 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 03:22:31 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 05:04:27 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ static void	mlx_destroy_mov(t_game *game)
 	mlx_destroy_image(game->mlx, game->mov_2);
 	mlx_destroy_image(game->mlx, game->mov_3);
 	mlx_destroy_image(game->mlx, game->mov_h);
+	mlx_destroy_image(game->mlx, game->mov_h2);
 	mlx_destroy_image(game->mlx, game->mos_0);
 	mlx_destroy_image(game->mlx, game->mos_1);
 	mlx_destroy_image(game->mlx, game->mos_2);

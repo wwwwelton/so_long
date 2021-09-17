@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 04:52:43 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 05:00:24 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ typedef struct s_game
 	void	*mov_2;
 	void	*mov_3;
 	void	*mov_h;
+	void	*mov_h2;
 	void	*mos_0;
 	void	*mos_1;
 	void	*mos_2;
@@ -126,6 +127,7 @@ typedef struct s_map
 # define MOV_3 "assets/images/env_2/score/M_3.xpm"
 
 # define MOV_H "assets/images/env_2/score/M_H.xpm"
+# define MOV_H2 "assets/images/env_2/score/M_H2.xpm"
 
 # define MS_0 "assets/images/env_2/score/MS_0.xpm"
 # define MS_1 "assets/images/env_2/score/MS_1.xpm"

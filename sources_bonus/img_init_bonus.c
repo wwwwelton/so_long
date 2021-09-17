@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 03:01:02 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 03:22:16 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 05:01:37 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static void	img_score_init(t_game *game)
 	game->mov_2 = img_initalize(MOV_2, game);
 	game->mov_3 = img_initalize(MOV_3, game);
 	game->mov_h = img_initalize(MOV_H, game);
+	game->mov_h2 = img_initalize(MOV_H2, game);
 	game->mos_0 = img_initalize(MS_0, game);
 	game->mos_1 = img_initalize(MS_1, game);
 	game->mos_2 = img_initalize(MS_2, game);

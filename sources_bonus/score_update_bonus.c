@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 20:38:58 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 02:04:30 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 05:03:24 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ static void	heart_updater(t_game *game)
 			game->map[0][7 + i] = -123;
 			i++;
 		}
+		if (game->end_game_win)
+			game->map[0][7 + i] = -124;
 	}
 }
 
