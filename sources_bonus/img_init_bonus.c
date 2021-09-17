@@ -6,13 +6,13 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 03:01:02 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 01:28:53 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 03:22:16 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-static void	*img_initalize(char *img, t_game *game)
+void	*img_initalize(char *img, t_game *game)
 {
 	void	*img_ptr;
 

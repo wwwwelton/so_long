@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 01:40:59 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 03:24:51 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ typedef struct s_game
 	int		collectable;
 	int		end_game;
 	int		loops;
+	int		animations;
+	int		frame;
 	void	*mov_1;
 	void	*mov_2;
 	void	*mov_3;
@@ -80,6 +82,7 @@ typedef struct s_map
 # define DEBUG 1
 
 # define GAME_SPEED 4000
+# define ANIMATION_SPEED 1000
 
 # define X_EVENT_KEY_PRESS 2
 # define X_EVENT_DESTROY_NOTIFY 17
@@ -117,37 +120,45 @@ typedef struct s_map
 # define ENEMY_S "assets/images/env_2/E_S.xpm"
 # define ENEMY_D "assets/images/env_2/E_D.xpm"
 
-# define MOV_1 "assets/images/env_2/moves/M_1.xpm"
-# define MOV_2 "assets/images/env_2/moves/M_2.xpm"
-# define MOV_3 "assets/images/env_2/moves/M_3.xpm"
+# define MOV_1 "assets/images/env_2/score/M_1.xpm"
+# define MOV_2 "assets/images/env_2/score/M_2.xpm"
+# define MOV_3 "assets/images/env_2/score/M_3.xpm"
 
-# define MOV_H "assets/images/env_2/moves/M_H.xpm"
+# define MOV_H "assets/images/env_2/score/M_H.xpm"
 
-# define MS_0 "assets/images/env_2/moves/MS_0.xpm"
-# define MS_1 "assets/images/env_2/moves/MS_1.xpm"
-# define MS_2 "assets/images/env_2/moves/MS_2.xpm"
-# define MS_3 "assets/images/env_2/moves/MS_3.xpm"
-# define MS_4 "assets/images/env_2/moves/MS_4.xpm"
-# define MS_5 "assets/images/env_2/moves/MS_5.xpm"
-# define MS_6 "assets/images/env_2/moves/MS_6.xpm"
-# define MS_7 "assets/images/env_2/moves/MS_7.xpm"
-# define MS_8 "assets/images/env_2/moves/MS_8.xpm"
-# define MS_9 "assets/images/env_2/moves/MS_9.xpm"
+# define MS_0 "assets/images/env_2/score/MS_0.xpm"
+# define MS_1 "assets/images/env_2/score/MS_1.xpm"
+# define MS_2 "assets/images/env_2/score/MS_2.xpm"
+# define MS_3 "assets/images/env_2/score/MS_3.xpm"
+# define MS_4 "assets/images/env_2/score/MS_4.xpm"
+# define MS_5 "assets/images/env_2/score/MS_5.xpm"
+# define MS_6 "assets/images/env_2/score/MS_6.xpm"
+# define MS_7 "assets/images/env_2/score/MS_7.xpm"
+# define MS_8 "assets/images/env_2/score/MS_8.xpm"
+# define MS_9 "assets/images/env_2/score/MS_9.xpm"
+
+# define C_1 "assets/images/env_2/animation/C_1.xpm"
+# define C_2 "assets/images/env_2/animation/C_2.xpm"
+# define C_3 "assets/images/env_2/animation/C_3.xpm"
+# define C_4 "assets/images/env_2/animation/C_4.xpm"
+# define C_5 "assets/images/env_2/animation/C_5.xpm"
 
 # define SPRITE_SIZE 32
 
-int		enemy_update(t_game *game);
 int		exit_game(t_game *game);
 int		is_enemy(char enemy);
 int		is_score(char score);
 int		key_press(int keycode, t_game *game);
+int		loop_hook(t_game *game);
 int		map_check(char **map, char *file);
 int		map_resume(t_game *game);
+void	animate(t_game *game);
 void	change_position(char *pos, char *next_pos, char val, char new_val);
 char	enemy_flip(char c);
 void	enemy_init(t_game *game);
 void	enemy_kill(t_game *game);
 void	enemy_translate(t_game *game);
+void	enemy_update(t_game *game);
 void	free_game(t_game *game);
 void	free_map(char **map);
 void	game_hook(t_game *game);
@@ -171,6 +182,7 @@ void	score_update(t_game *game);
 void	t_map_init(t_map *m);
 void	update_direction(int player_direction, t_game *game);
 void	update_player(int keycode, t_game *game);
+void	*img_initalize(char *img, t_game *game);
 char	**map_gen(char *path_to_file);
 
 #endif

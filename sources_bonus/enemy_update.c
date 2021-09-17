@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 01:55:03 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/16 19:40:06 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 03:16:22 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	enemy_update_position(t_game *game, int i, int j)
 		game->map[i][j] = ft_toupper(enemy_flip(game->map[i][j]));
 }
 
-int	enemy_update(t_game *game)
+void	enemy_update(t_game *game)
 {
 	int		i;
 	int		j;
@@ -42,7 +42,7 @@ int	enemy_update(t_game *game)
 	if (game->loops < GAME_SPEED || game->end_game)
 	{
 		game->loops++;
-		return (0);
+		return ;
 	}
 	else
 		game->loops = 0;
@@ -60,5 +60,4 @@ int	enemy_update(t_game *game)
 	}
 	enemy_translate(game);
 	map_updater(game);
-	return (0);
 }

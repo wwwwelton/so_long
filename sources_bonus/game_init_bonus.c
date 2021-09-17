@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 02:17:51 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 01:27:52 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 03:09:23 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ void	game_init(t_game *game)
 	game->player_direction = 'D';
 	game->end_game = 0;
 	game->loops = 0;
+	game->animations = 0;
+	game->frame = 1;
 	score_init(game);
 }
