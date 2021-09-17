@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 03:01:02 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/16 20:58:17 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 01:28:53 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	*img_initalize(char *img, t_game *game)
 	return (img_ptr);
 }
 
-static void	img_mov_init(t_game *game)
+static void	img_score_init(t_game *game)
 {
 	game->mov_1 = img_initalize(MOV_1, game);
 	game->mov_2 = img_initalize(MOV_2, game);
@@ -41,7 +41,7 @@ static void	img_mov_init(t_game *game)
 
 void	img_init(t_game *game)
 {
-	img_mov_init(game);
+	img_score_init(game);
 	game->img_space = img_initalize(IMG_SPACE, game);
 	game->img_wall = img_initalize(IMG_WALL, game);
 	game->img_collect = img_initalize(IMG_COLLECT, game);

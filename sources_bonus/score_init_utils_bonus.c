@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game_init_bonus.c                                  :+:      :+:    :+:   */
+/*   score_init_utils_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 02:17:51 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 01:27:52 by wleite           ###   ########.fr       */
+/*   Created: 2021/09/10 01:55:03 by wleite            #+#    #+#             */
+/*   Updated: 2021/09/17 00:41:36 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-void	game_init(t_game *game)
+int	is_score(char score)
 {
-	get_window_size(game);
-	game->mlx = mlx_init();
-	game->win = mlx_new_window
-		(game->mlx, game->win_width, game->win_height, "so_long_bonus");
-	game->moves = 0;
-	game->collected = 0;
-	game->collectable = 0;
-	game->player_direction = 'D';
-	game->end_game = 0;
-	game->loops = 0;
-	score_init(game);
+	return (score >= -127 && score <= -1);
 }

@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 01:55:03 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/15 21:25:14 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 00:34:45 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void	map_init(t_game *game)
 	int		i;
 	int		j;
 
-	i = 0;
-	while (game->map[i])
+	i = -1;
+	while (game->map[++i])
 	{
-		j = 0;
-		while (game->map[i][j])
+		j = -1;
+		while (game->map[i][++j])
 		{
 			if (game->map[i][j] == '1')
 				img_draw(game, game->img_wall, j, i);
@@ -35,8 +35,8 @@ void	map_init(t_game *game)
 				map_init_hook_p(game, j, i);
 			else if (is_enemy(game->map[i][j]))
 				map_init_hook_e(game, j, i);
-			j++;
+			else if (is_score(game->map[i][j]))
+				map_init_hook_s(game, j, i);
 		}
-		i++;
 	}
 }

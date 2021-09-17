@@ -6,13 +6,13 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 01:55:03 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/15 23:41:19 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 01:00:30 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-int	map_resume(t_game *game)
+static void	map_resumer(t_game *game)
 {
 	int		i;
 	int		j;
@@ -35,7 +35,15 @@ int	map_resume(t_game *game)
 				map_update_hook_p(game, j, i);
 			else if (is_enemy(game->map[i][j]))
 				map_update_hook_e(game, j, i);
+			else if (is_score(game->map[i][j]))
+				map_update_hook_s(game, j, i);
 		}
 	}
+}
+
+
+int	map_resume(t_game *game)
+{
+	map_resumer(game);
 	return (0);
 }

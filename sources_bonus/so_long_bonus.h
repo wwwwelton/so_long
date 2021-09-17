@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/16 20:51:26 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 01:29:04 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ typedef struct s_map
 
 # define DEBUG 1
 
-# define GAME_SPEED 3000
+# define GAME_SPEED 4000
 
 # define X_EVENT_KEY_PRESS 2
 # define X_EVENT_DESTROY_NOTIFY 17
@@ -134,12 +134,12 @@ typedef struct s_map
 # define MS_8 "assets/images/env_2/moves/MS_8.xpm"
 # define MS_9 "assets/images/env_2/moves/MS_9.xpm"
 
-
 # define SPRITE_SIZE 32
 
 int		enemy_update(t_game *game);
 int		exit_game(t_game *game);
 int		is_enemy(char enemy);
+int		is_score(char score);
 int		key_press(int keycode, t_game *game);
 int		map_check(char **map, char *file);
 int		map_resume(t_game *game);
@@ -160,10 +160,13 @@ void	map_init(t_game *game);
 void	map_init_hook_c(t_game *game, int j, int i);
 void	map_init_hook_e(t_game *game, int j, int i);
 void	map_init_hook_p(t_game *game, int j, int i);
+void	map_init_hook_s(t_game *game, int j, int i);
 void	map_update(int keycode, t_game *game);
 void	map_updater(t_game *game);
 void	map_update_hook_e(t_game *game, int j, int i);
 void	map_update_hook_p(t_game *game, int j, int i);
+void	map_update_hook_s(t_game *game, int j, int i);
+void	score_init(t_game *game);
 void	t_map_init(t_map *m);
 void	update_direction(int player_direction, t_game *game);
 void	update_player(int keycode, t_game *game);
