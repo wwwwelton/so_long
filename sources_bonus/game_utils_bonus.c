@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 02:46:04 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 01:40:12 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 02:05:34 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int	display_info(t_game *game)
 		printf("collected: %d\n", game->collected);
 		printf("player: X: %d | Y: %d | D: %c\n",
 			game->x, game->y, ft_toupper(game->player_direction));
+		printf("moves: %d\n", game->moves);
 	}
-	printf("moves: %d\n", game->moves);
 	return (1);
 }
 

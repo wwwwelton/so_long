@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 20:38:58 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 01:57:55 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 02:04:30 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,21 @@ static int	parse_score(char score)
 		return (0);
 }
 
+static void	heart_updater(t_game *game)
+{
+	int		i;
+
+	i = 0;
+	if (game->collected)
+	{
+		while (i < game->collected)
+		{
+			game->map[0][7 + i] = -123;
+			i++;
+		}
+	}
+}
+
 static void	score_updater(t_game *game)
 {
 	char	*moves;
@@ -82,4 +97,5 @@ static void	score_updater(t_game *game)
 void	score_update(t_game *game)
 {
 	score_updater(game);
+	heart_updater(game);
 }
