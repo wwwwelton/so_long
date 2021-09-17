@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 20:38:58 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 00:52:04 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 01:40:44 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ void	map_update(int keycode, t_game *game)
 {
 	update_direction(keycode, game);
 	update_player(keycode, game);
+	score_update(game);
 	map_updater(game);
 }

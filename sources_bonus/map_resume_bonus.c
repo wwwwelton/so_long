@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 01:55:03 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 01:00:30 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 01:57:40 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ static void	map_resumer(t_game *game)
 		}
 	}
 }
-
 
 int	map_resume(t_game *game)
 {

@@ -18,6 +18,7 @@ SOURCES_BONUS	+=	map_update_utils_bonus.c so_long_bonus.c enemy_init_bonus.c
 SOURCES_BONUS	+=	enemy_init_utils_bonus.c player_update_bonus.c
 SOURCES_BONUS	+=	hold_key_bonus.c enemy_update.c enemy_update_utils.c
 SOURCES_BONUS	+=	score_init_bonus.c score_init_utils_bonus.c
+SOURCES_BONUS	+=	score_update_bonus.c
 
 SOURCES_DIR		=	sources
 
