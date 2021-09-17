@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 04:32:22 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 04:52:43 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct s_game
 	int		collected;
 	int		collectable;
 	int		end_game;
+	int		end_game_win;
 	int		loops;
 	int		animations;
 	int		frame;

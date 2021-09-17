@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 23:38:05 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/16 00:37:56 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 04:52:16 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ static void	handle_e(t_game *game, int ny, int nx)
 	change_position(&game->map[gy][gx], &game->map[ny][nx], '0', 'E');
 	game->moves++;
 	game->end_game = 1;
+	game->end_game_win = 1;
 }
 
 static void	handle_en(t_game *game)

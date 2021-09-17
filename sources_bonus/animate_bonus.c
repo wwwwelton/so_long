@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 03:00:52 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 04:33:35 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 04:53:46 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ static void	animate_collect(t_game *game, int frame)
 static void	animate_exit(t_game *game, int frame)
 {
 	mlx_destroy_image(game->mlx, game->img_exit);
-	if (frame == 1)
+	if (game->end_game_win)
+		game->img_exit = img_initalize(IMG_EXIT, game);
+	else if (frame == 1)
 		game->img_exit = img_initalize(E_1, game);
 	else if (frame == 2)
 		game->img_exit = img_initalize(E_2, game);
