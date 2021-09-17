@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 03:24:51 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 04:32:22 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,12 @@ typedef struct s_map
 # define C_3 "assets/images/env_2/animation/C_3.xpm"
 # define C_4 "assets/images/env_2/animation/C_4.xpm"
 # define C_5 "assets/images/env_2/animation/C_5.xpm"
+
+# define E_1 "assets/images/env_2/animation/E_1.xpm"
+# define E_2 "assets/images/env_2/animation/E_2.xpm"
+# define E_3 "assets/images/env_2/animation/E_3.xpm"
+# define E_4 "assets/images/env_2/animation/E_4.xpm"
+# define E_5 "assets/images/env_2/animation/E_5.xpm"
 
 # define SPRITE_SIZE 32
 
