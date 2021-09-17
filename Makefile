@@ -16,28 +16,24 @@ SOURCES_BONUS	+=	map_gen_bonus.c map_init_bonus.c map_init_utils_bonus.c
 SOURCES_BONUS	+=	map_resume_bonus.c map_update_bonus.c
 SOURCES_BONUS	+=	map_update_utils_bonus.c so_long_bonus.c enemy_init_bonus.c
 SOURCES_BONUS	+=	enemy_init_utils_bonus.c player_update_bonus.c
-SOURCES_BONUS	+=	hold_key_bonus.c enemy_update.c enemy_update_utils.c
-SOURCES_BONUS	+=	score_init_bonus.c score_init_utils_bonus.c
-SOURCES_BONUS	+=	score_update_bonus.c animate_bonus.c loop_hook_bonus.c
+SOURCES_BONUS	+=	hold_key_bonus.c enemy_update_bonus.c
+SOURCES_BONUS	+=	enemy_update_utils_bonus.c score_init_bonus.c
+SOURCES_BONUS	+=	score_init_utils_bonus.c score_update_bonus.c
+SOURCES_BONUS	+=	animate_bonus.c loop_hook_bonus.c
 
 SOURCES_DIR		=	sources
-
-HEADER			=	$(SOURCES_DIR)/so_long.h
-
-HEADER_BONUS	=	$(BONUS_DIR)/so_long_bonus.h
-
 BONUS_DIR		=	sources_bonus
 
-SOURCES			=	$(addprefix $(SOURCES_DIR)/, $(SOURCES_FILES))
+HEADER			=	$(SOURCES_DIR)/so_long.h
+HEADER_BONUS	=	$(BONUS_DIR)/so_long_bonus.h
 
+SOURCES			=	$(addprefix $(SOURCES_DIR)/, $(SOURCES_FILES))
 BONUS_FILES		=	$(addprefix $(BONUS_DIR)/, $(SOURCES_BONUS))
 
 OBJECTS			= 	$(SOURCES:.c=.o)
-
 OBJECTS_BONUS	= 	$(BONUS_FILES:.c=.o)
 
 NAME			=	so_long
-
 NAME_BONUS		=	so_long_bonus
 
 CC				=	gcc
@@ -93,10 +89,10 @@ runiv:
 				$(MAKE) && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long assets/maps/another.berr
 
 norm:
-				norminette $(SOURCES) ./includes/so_long.h
+				norminette $(SOURCES_DIR)
 
 normb:
-				norminette ./includes/so_long.h $(BONUS_DIR)
+				norminette $(BONUS_DIR)
 
 img:
 				convert *.jpg -set filename:base "%[basename]" "%[filename:base].xpm"
