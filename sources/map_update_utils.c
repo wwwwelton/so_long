@@ -6,11 +6,11 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 03:12:41 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/14 03:20:18 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 05:20:08 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "so_long.h"
 
 void	map_update_hook_p(t_game *game, int j, int i)
 {

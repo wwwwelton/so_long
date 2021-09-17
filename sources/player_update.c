@@ -6,11 +6,11 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 00:16:08 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/16 00:03:55 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 05:20:08 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "so_long.h"
 
 void	update_player(int keycode, t_game *game)
 {

@@ -6,11 +6,11 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 03:01:02 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/14 03:28:18 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 05:20:08 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "so_long.h"
 
 static void	*img_initalize(char *img, t_game *game)
 {

@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 05:00:24 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 05:19:20 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ typedef struct s_map
 	int	c_count;
 }	t_map;
 
-# define DEBUG 1
+# define DEBUG 0
 
 # define GAME_SPEED 4000
 # define ANIMATION_SPEED 1000

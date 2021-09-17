@@ -22,6 +22,10 @@ SOURCES_BONUS	+=	score_update_bonus.c animate_bonus.c loop_hook_bonus.c
 
 SOURCES_DIR		=	sources
 
+HEADER			=	$(SOURCES_DIR)/so_long.h
+
+HEADER_BONUS	=	$(BONUS_DIR)/so_long_bonus.h
+
 BONUS_DIR		=	sources_bonus
 
 SOURCES			=	$(addprefix $(SOURCES_DIR)/, $(SOURCES_FILES))
@@ -31,8 +35,6 @@ BONUS_FILES		=	$(addprefix $(BONUS_DIR)/, $(SOURCES_BONUS))
 OBJECTS			= 	$(SOURCES:.c=.o)
 
 OBJECTS_BONUS	= 	$(BONUS_FILES:.c=.o)
-
-INCLUDES		=	./includes
 
 NAME			=	so_long
 
@@ -52,11 +54,11 @@ all:			$(NAME)
 
 bonus:			$(NAME_BONUS)
 
-$(NAME):		$(LIBFT) $(MINILIBX) $(OBJECTS)
-				$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) $(MINILIBX) $(MLXFLAGS) -I $(INCLUDES) -o $(NAME)
+$(NAME):		$(LIBFT) $(MINILIBX) $(OBJECTS) $(HEADER)
+				$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) $(MINILIBX) $(MLXFLAGS) -o $(NAME)
 
-$(NAME_BONUS):	$(LIBFT) $(MINILIBX) $(OBJECTS_BONUS)
-				$(CC) $(CFLAGS) $(OBJECTS_BONUS) $(LIBFT) $(MINILIBX) $(MLXFLAGS) -I $(INCLUDES) -o $(NAME_BONUS)
+$(NAME_BONUS):	$(LIBFT) $(MINILIBX) $(OBJECTS_BONUS) $(HEADER_BONUS)
+				$(CC) $(CFLAGS) $(OBJECTS_BONUS) $(LIBFT) $(MINILIBX) $(MLXFLAGS) -o $(NAME_BONUS)
 
 $(LIBFT):
 				$(MAKE) -C $(LIBFT_PATH)
@@ -79,7 +81,7 @@ run:
 				$(MAKE) && ./so_long "assets/maps/another_2.ber"
 
 runb:
-				$(MAKE) bonus && ./so_long_bonus "assets/maps/default_2.ber"
+				$(MAKE) bonus && ./so_long_bonus "assets/maps/another_2.ber"
 
 runbv:
 				$(MAKE) bonus && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long_bonus "assets/maps/another_2.ber"
