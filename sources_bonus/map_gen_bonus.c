@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 00:43:20 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/15 03:27:41 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 16:33:18 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	**map_gen(char *path_to_file)
 	map = ft_strdup("");
 	while (1)
 	{
-		holder = get_next_line(fd);
+		holder = ft_get_next_line(fd);
 		if (!holder)
 			break ;
 		old_address = map;

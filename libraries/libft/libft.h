@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 19:25:46 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/15 00:16:41 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 16:28:18 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -568,6 +568,6 @@ char	*ft_uitoa_base(size_t n, const char *base);
  * dont have \\n return a string without \\n, NULL if the file is empty
  * or error occurred.
  */
-char	*get_next_line(int fd);
+char	*ft_get_next_line(int fd);
 
 #endif

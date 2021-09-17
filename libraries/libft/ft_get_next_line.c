@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   ft_get_next_line.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 00:15:03 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/15 00:21:50 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/17 16:27:47 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static char	*get_line(int fd, char **buffer, char **buffer_backup)
 	return (NULL);
 }
 
-char	*get_next_line(int fd)
+char	*ft_get_next_line(int fd)
 {
 	static char		*buffer_backup[OPEN_MAX + 1];
 	char			*buffer;
