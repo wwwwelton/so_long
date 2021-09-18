@@ -6,3 +6,6 @@ libmlx.a
 libmlx_Linux.a
 .vscode
 *.psd
+images
+README.md
+license
