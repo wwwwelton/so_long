@@ -77,7 +77,7 @@ run:
 				$(MAKE) && ./so_long "assets/maps/another_2.ber"
 
 runb:
-				$(MAKE) bonus && ./so_long_bonus "assets/maps/another_2.ber"
+				$(MAKE) bonus && ./so_long_bonus "assets/maps/another_4.ber"
 
 runbv:
 				$(MAKE) bonus && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long_bonus "assets/maps/another_2.ber"
