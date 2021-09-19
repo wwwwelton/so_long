@@ -8,6 +8,7 @@ SOURCES_FILES	=	so_long.c map_gen.c map_check.c map_init.c
 SOURCES_FILES	+=	game_init.c game_utils.c img_init.c img_draw.c map_update.c
 SOURCES_FILES	+=	hold_key.c map_init_utils.c map_update_utils.c free_fire.c
 SOURCES_FILES	+=	map_resume.c game_hook.c map_check_utils.c player_update.c
+SOURCES_FILES	+=	data_init.c
 
 SOURCES_BONUS	=	free_fire_bonus.c game_hook_bonus.c game_init_bonus.c
 SOURCES_BONUS	+=	game_utils_bonus.c img_draw_bonus.c
@@ -19,7 +20,7 @@ SOURCES_BONUS	+=	enemy_init_utils_bonus.c player_update_bonus.c
 SOURCES_BONUS	+=	hold_key_bonus.c enemy_update_bonus.c
 SOURCES_BONUS	+=	enemy_update_utils_bonus.c score_init_bonus.c
 SOURCES_BONUS	+=	score_init_utils_bonus.c score_update_bonus.c
-SOURCES_BONUS	+=	animate_bonus.c loop_hook_bonus.c
+SOURCES_BONUS	+=	animate_bonus.c loop_hook_bonus.c data_init_bonus.c
 
 SOURCES_DIR		=	sources
 BONUS_DIR		=	sources_bonus

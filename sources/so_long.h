@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 05:21:26 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/19 11:07:18 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ int		key_press(int keycode, t_game *game);
 int		map_check(char **map, char *file);
 int		map_resume(t_game *game);
 void	change_position(char *pos, char *next_pos, char val, char new_val);
+void	data_init(t_game *game);
 void	free_game(t_game *game);
 void	free_map(char **map);
 void	game_hook(t_game *game);

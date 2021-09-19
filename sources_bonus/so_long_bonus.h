@@ -6,7 +6,7 @@
 /*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 21:21:11 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/17 17:18:05 by wleite           ###   ########.fr       */
+/*   Updated: 2021/09/19 10:55:50 by wleite           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,6 +165,7 @@ int		map_check(char **map, char *file);
 int		map_resume(t_game *game);
 void	animate(t_game *game);
 void	change_position(char *pos, char *next_pos, char val, char new_val);
+void	data_init(t_game *game);
 char	enemy_flip(char c);
 void	enemy_init(t_game *game);
 void	enemy_kill(t_game *game);
