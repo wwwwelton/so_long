@@ -37,11 +37,11 @@ OBJECTS_BONUS	= 	$(BONUS_FILES:.c=.o)
 NAME			=	so_long
 NAME_BONUS		=	so_long_bonus
 
-CC				=	gcc
+CC				=	clang
 RM				=	rm -f
 
 # CFLAGS			=	-Wall -Wextra -Werror -no-pie -g3 -fsanitize=address
-CFLAGS			=	-Wall -Wextra -Werror -no-pie -g3
+CFLAGS			=	-Wall -Wextra -Werror
 MLXFLAGS		=	-L. -lXext -L. -lX11
 
 .c.o:
