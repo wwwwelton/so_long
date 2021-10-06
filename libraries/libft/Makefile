@@ -15,35 +15,45 @@ SOURCES_BONUS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c
 SOURCES_BONUS	+=	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c
 SOURCES_BONUS	+=	ft_lstmap.c
 
-OBJECTS			= 	$(SOURCES:.c=.o)
+HEADER			=	libft.h
 
-OBJECTS_BONUS	= 	$(SOURCES_BONUS:.c=.o)
+OBJ_DIR			=	objects
+
+OBJECTS			=	$(SOURCES:%.c=$(OBJ_DIR)/%.o)
+OBJECTS_BONUS	=	$(SOURCES_BONUS:%.c=$(OBJ_DIR)/%.o)
 
 NAME			=	libft.a
+NAME_BONUS		=	libft_bonus.a
 
 CC				=	clang
 AR				=	ar
-RM				=	rm -f
+RM				=	rm -rf
 
 CFLAGS			=	-Wall -Wextra -Werror
 ARFLAGS 		=	rcs
 
-.c.o:
-				$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+$(OBJ_DIR)/%.o:	%.c $(HEADER)
+				$(CC) $(CFLAGS) -c $< -o $@
 
 all:			$(NAME)
 
-$(NAME):		$(OBJECTS)
+bonus:			$(NAME_BONUS)
+
+$(NAME):		$(OBJ_DIR) $(OBJECTS) $(HEADER)
 				$(AR) $(ARFLAGS) $(NAME) $(OBJECTS)
 
-bonus:			$(NAME) $(OBJECTS_BONUS)
+$(NAME_BONUS):	$(NAME) $(OBJ_DIR) $(OBJECTS_BONUS) $(HEADER)
 				$(AR) $(ARFLAGS) $(NAME) $(OBJECTS_BONUS)
+				touch $(NAME_BONUS)
+
+$(OBJ_DIR):
+				mkdir -p $(OBJ_DIR)
 
 clean:
-				$(RM) $(OBJECTS) $(OBJECTS_BONUS)
+				$(RM) $(OBJ_DIR)
 
 fclean:			clean
-				$(RM) $(NAME)
+				$(RM) $(NAME) $(NAME_BONUS)
 
 re:				fclean all
 
