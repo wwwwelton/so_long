@@ -25,77 +25,64 @@ SOURCES_BONUS	+=	animate_bonus.c loop_hook_bonus.c data_init_bonus.c
 SOURCES_DIR		=	sources
 BONUS_DIR		=	sources_bonus
 
+OBJ_DIR			=	objects
+
 HEADER			=	$(SOURCES_DIR)/so_long.h
 HEADER_BONUS	=	$(BONUS_DIR)/so_long_bonus.h
 
 SOURCES			=	$(addprefix $(SOURCES_DIR)/, $(SOURCES_FILES))
 BONUS_FILES		=	$(addprefix $(BONUS_DIR)/, $(SOURCES_BONUS))
 
-OBJECTS			= 	$(SOURCES:.c=.o)
-OBJECTS_BONUS	= 	$(BONUS_FILES:.c=.o)
+OBJECTS			=	$(SOURCES:$(SOURCES_DIR)/%.c=$(OBJ_DIR)/%.o)
+OBJECTS_BONUS	=	$(BONUS_FILES:$(BONUS_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 NAME			=	so_long
 NAME_BONUS		=	so_long_bonus
 
 CC				=	clang
-RM				=	rm -f
+RM				=	rm -rf
 
-# CFLAGS			=	-Wall -Wextra -Werror -no-pie -g3 -fsanitize=address
 CFLAGS			=	-Wall -Wextra -Werror
 MLXFLAGS		=	-L. -lXext -L. -lX11
 
-.c.o:
-				$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+$(OBJ_DIR)/%.o:		$(SOURCES_DIR)/%.c $(HEADER)
+					$(CC) $(CFLAGS) -c $< -o $@
 
-all:			$(NAME)
+$(OBJ_DIR)/%.o:		$(BONUS_DIR)/%.c $(HEADER_BONUS)
+					$(CC) $(CFLAGS) -c $< -o $@
 
-bonus:			$(NAME_BONUS)
+all:				$(NAME)
 
-$(NAME):		$(LIBFT) $(MINILIBX) $(OBJECTS) $(HEADER)
-				$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) $(MINILIBX) $(MLXFLAGS) -o $(NAME)
+bonus:				$(NAME_BONUS)
 
-$(NAME_BONUS):	$(LIBFT) $(MINILIBX) $(OBJECTS_BONUS) $(HEADER_BONUS)
-				$(CC) $(CFLAGS) $(OBJECTS_BONUS) $(LIBFT) $(MINILIBX) $(MLXFLAGS) -o $(NAME_BONUS)
+$(NAME):			$(LIBFT) $(OBJ_DIR) $(MINILIBX) $(OBJECTS) $(HEADER)
+					$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) $(MINILIBX) \
+					$(MLXFLAGS) -o $(NAME)
+
+$(NAME_BONUS):		$(LIBFT) $(OBJ_DIR) $(MINILIBX) $(OBJECTS_BONUS) \
+					$(HEADER_BONUS)
+					$(CC) $(CFLAGS) $(OBJECTS_BONUS) $(LIBFT) $(MINILIBX) \
+					$(MLXFLAGS) -o $(NAME)
+					cp $(NAME) $(NAME_BONUS)
 
 $(LIBFT):
-				$(MAKE) -C $(LIBFT_PATH)
+					$(MAKE) -C $(LIBFT_PATH) bonus
 
 $(MINILIBX):
-				$(MAKE) -C $(MINILIBX_PATH)
+					$(MAKE) -C $(MINILIBX_PATH)
+
+$(OBJ_DIR):
+					mkdir -p $(OBJ_DIR)
 
 clean:
-				$(MAKE) -C $(LIBFT_PATH) clean
-				$(MAKE) -C $(MINILIBX_PATH) clean
-				$(RM) $(OBJECTS) $(OBJECTS_BONUS)
+					$(MAKE) -C $(LIBFT_PATH) clean
+					$(MAKE) -C $(MINILIBX_PATH) clean
+					$(RM) $(OBJ_DIR)
 
-fclean:			clean
-				$(MAKE) -C $(LIBFT_PATH) fclean
-				$(RM) $(NAME) $(NAME_BONUS)
+fclean:				clean
+					$(MAKE) -C $(LIBFT_PATH) fclean
+					$(RM) $(NAME) $(NAME_BONUS)
 
-re:				fclean all
+re:					fclean all
 
-run:
-				$(MAKE) && ./so_long "assets/maps/another_2.ber"
-
-runb:
-				$(MAKE) bonus && ./so_long_bonus "assets/maps/another_4.ber"
-
-runbv:
-				$(MAKE) bonus && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long_bonus "assets/maps/another_2.ber"
-
-runv:
-				$(MAKE) && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long assets/maps/another_2.ber
-
-runiv:
-				$(MAKE) && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long assets/maps/another.berr
-
-norm:
-				norminette $(SOURCES_DIR)
-
-normb:
-				norminette $(BONUS_DIR)
-
-img:
-				convert *.jpg -set filename:base "%[basename]" "%[filename:base].xpm"
-
-.PHONY:			all clean fclean re libft minilibx bonus
+.PHONY:				all clean fclean re libft minilibx bonus

@@ -44,7 +44,7 @@ $(NAME):		$(OBJ_DIR) $(OBJECTS) $(HEADER)
 
 $(NAME_BONUS):	$(NAME) $(OBJ_DIR) $(OBJECTS_BONUS) $(HEADER)
 				$(AR) $(ARFLAGS) $(NAME) $(OBJECTS_BONUS)
-				touch $(NAME_BONUS)
+				cp $(NAME) $(NAME_BONUS)
 
 $(OBJ_DIR):
 				mkdir -p $(OBJ_DIR)
