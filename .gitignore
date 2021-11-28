@@ -3,10 +3,6 @@ a.out
 mlx-test
 *.a
 .vscode
-*.psd
-images
-README.md
-license
 objects
 so_long
 so_long_bonus
