@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data_init.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
+/*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 02:17:51 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/19 11:07:30 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/28 12:36:55 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ void	data_init(t_game *game)
 	game->moves = 0;
 	game->collected = 0;
 	game->collectable = 0;
-	game->player_direction = 'D';
+	game->player_direction = 'd';
 	game->end_game = 0;
 }

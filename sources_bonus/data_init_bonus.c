@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data_init_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wleite <wleite@student.42sp.org.br>        +#+  +:+       +#+        */
+/*   By: itaureli <itaureli@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 02:17:51 by wleite            #+#    #+#             */
-/*   Updated: 2021/09/19 11:02:07 by wleite           ###   ########.fr       */
+/*   Updated: 2021/11/28 12:37:04 by itaureli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	data_init(t_game *game)
 	game->moves = 0;
 	game->collected = 0;
 	game->collectable = 0;
-	game->player_direction = 'D';
+	game->player_direction = 'd';
 	game->end_game = 0;
 	game->end_game_win = 0;
 	game->loops = 0;
